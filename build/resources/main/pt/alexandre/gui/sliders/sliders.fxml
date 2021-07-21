@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pt.alexandre.gui.sliders.SlidersController">
+   <children>
+      <VBox layoutX="18.0" layoutY="22.0" spacing="35.0">
+         <children>
+            <Pane fx:id="paneAff" prefHeight="125.0" prefWidth="543.0" />
+            <HBox spacing="30.0">
+               <children>
+                  <VBox spacing="50.0">
+                     <children>
+                        <Slider fx:id="slideRouge" blockIncrement="1.0" max="255.0" onMouseDragged="#changeCouleur" prefHeight="21.0" prefWidth="313.0" />
+                        <Slider fx:id="slideVert" blockIncrement="1.0" max="255.0" onMouseDragged="#changeCouleur" prefHeight="21.0" prefWidth="313.0" />
+                        <Slider fx:id="slideBleu" blockIncrement="1.0" max="255.0" onMouseDragged="#changeCouleur" prefHeight="21.0" prefWidth="313.0" />
+                     </children>
+                     <padding>
+                        <Insets top="20.0" />
+                     </padding>
+                  </VBox>
+                  <VBox spacing="20.0">
+                     <children>
+                        <Pane prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: darkred;" />
+                        <Pane prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: green;" />
+                        <Pane prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: blue;" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

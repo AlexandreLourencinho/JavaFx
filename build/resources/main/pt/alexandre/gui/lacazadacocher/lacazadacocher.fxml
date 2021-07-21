@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pt.alexandre.gui.lacazadacocher.LacazadacocherController">
+   <children>
+      <VBox layoutX="14.0" layoutY="47.0" spacing="45.0">
+         <children>
+            <HBox spacing="50.0">
+               <children>
+                  <VBox prefHeight="68.0" prefWidth="301.0" spacing="20.0">
+                     <children>
+                        <TextField fx:id="zonetxt" onKeyReleased="#auRelachement" prefHeight="25.0" prefWidth="350.0" />
+                        <Label fx:id="labelAff" prefHeight="34.0" prefWidth="301.0" />
+                     </children>
+                  </VBox>
+                  <TitledPane fx:id="choix" animated="false" disable="true" prefHeight="128.0" prefWidth="164.0" text="Choix">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <CheckBox fx:id="checkFond" layoutX="23.0" layoutY="14.0" mnemonicParsing="false" onAction="#testCasse" text="Couleur du fond" />
+                              <CheckBox fx:id="checkTxt" layoutX="23.0" layoutY="43.0" mnemonicParsing="false" onAction="#testCasse" text="Couleur du texte" />
+                              <CheckBox fx:id="checkCasse" layoutX="23.0" layoutY="71.0" mnemonicParsing="false" onAction="#testCasse" text="Casse" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </TitledPane>
+               </children>
+            </HBox>
+            <HBox spacing="35.0">
+               <children>
+                  <TitledPane fx:id="fond" animated="false" disable="true" prefHeight="128.0" prefWidth="164.0" text="Fond">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox layoutX="38.0" layoutY="6.0" spacing="20.0">
+                                 <children>
+                                    <RadioButton fx:id="radioFondrouge" mnemonicParsing="false" onAction="#testCasse" text="Rouge">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="radioFond" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <RadioButton fx:id="radioFondVert" mnemonicParsing="false" onAction="#testCasse" text="Vert" toggleGroup="$radioFond" />
+                                    <RadioButton fx:id="radioFondBleu" mnemonicParsing="false" onAction="#testCasse" text="Bleu" toggleGroup="$radioFond" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </TitledPane>
+                  <TitledPane fx:id="texte" animated="false" disable="true" prefHeight="128.0" prefWidth="164.0" text="Texte">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox layoutX="38.0" layoutY="6.0" spacing="20.0">
+                                 <children>
+                                    <RadioButton fx:id="radioRouge" mnemonicParsing="false" onAction="#testCasse" text="Marron">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="radioTexte" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <RadioButton fx:id="radioRose" mnemonicParsing="false" onAction="#testCasse" text="Rose" toggleGroup="$radioTexte" />
+                                    <RadioButton fx:id="radioCyan" mnemonicParsing="false" onAction="#testCasse" text="Cyan" toggleGroup="$radioTexte" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </TitledPane>
+                  <TitledPane fx:id="casse" animated="false" disable="true" prefHeight="128.0" prefWidth="164.0" text="Casse">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="65.0" prefWidth="162.0">
+                           <children>
+                              <VBox layoutX="38.0" layoutY="14.0" spacing="40.0">
+                                 <children>
+                                    <RadioButton fx:id="radioMinuscule" mnemonicParsing="false" onAction="#testCasse" text="Minuscule">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="radioCasse" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <RadioButton fx:id="radioMajuscule" mnemonicParsing="false" onAction="#testCasse" text="Majuscule" toggleGroup="$radioCasse" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </TitledPane>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

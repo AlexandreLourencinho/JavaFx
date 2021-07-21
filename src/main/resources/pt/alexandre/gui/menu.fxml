@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@style/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pt.alexandre.gui.MenuController">
+   <children>
+      <Label layoutX="123.0" layoutY="29.0" text="Exercices Java - JavaFx" textFill="#7edacb">
+         <font>
+            <Font size="36.0" />
+         </font>
+         <effect>
+            <Glow level="0.56" />
+         </effect>
+      </Label>
+      <VBox layoutX="63.0" layoutY="141.0" spacing="20.0">
+         <children>
+            <Button fx:id="boutonAdd" mnemonicParsing="false" onAction="#fenAdd" style="-fx-background-color: #886192;" text="Additionneur" textAlignment="CENTER" textFill="#450aa4" textOverrun="CLIP">
+               <effect>
+                  <Glow />
+               </effect></Button>
+            <Button fx:id="boutonCaza" mnemonicParsing="false" onAction="#fenCaza" text="La cazadacocher" />
+         </children>
+      </VBox>
+      <Button fx:id="sliders" layoutX="63.0" layoutY="230.0" mnemonicParsing="false" onAction="#fenSliders" text="Sliders les mondes parallèles" />
+   </children>
+</AnchorPane>
