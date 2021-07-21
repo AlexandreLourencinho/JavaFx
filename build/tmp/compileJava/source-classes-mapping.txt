@@ -1,10 +1,15 @@
 pt/alexandre/gui/additionneur/AdditionneurController.java
  pt.alexandre.AdditionneurController
-pt/alexandre/gui/lacazadacocher/LacazadacocherController.java
- pt.alexandre.gui.lacazadacocher.LacazadacocherController
+pt/alexandre/gui/sliders2/Sliders2Controller.java
+ pt.alexandre.gui.sliders2.Sliders2Controller
+ pt.alexandre.gui.sliders2.Sliders2Controller$1
+ pt.alexandre.gui.sliders2.Sliders2Controller$2
+ pt.alexandre.gui.sliders2.Sliders2Controller$3
+pt/alexandre/gui/sliders/SlidersController.java
+ pt.alexandre.gui.sliders.SlidersController
 pt/alexandre/gui/MenuController.java
  pt.alexandre.gui.MenuController
 pt/alexandre/App.java
  pt.alexandre.App
-pt/alexandre/gui/sliders/SlidersController.java
- pt.alexandre.gui.sliders.SlidersController
+pt/alexandre/gui/lacazadacocher/LacazadacocherController.java
+ pt.alexandre.gui.lacazadacocher.LacazadacocherController

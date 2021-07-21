@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pt.alexandre.gui.tableauClient.TableauClientController">
+   <children>
+      <HBox layoutX="9.0" layoutY="23.0" spacing="40.0">
+         <children>
+            <VBox>
+               <children>
+                  <Label text="Le Tableau de l'exo" />
+                  <TableView fx:id="tableauCli" prefHeight="332.0" prefWidth="366.0">
+                    <columns>
+                      <TableColumn fx:id="ColonnePrenom" prefWidth="128.0" text="Prénom" />
+                      <TableColumn fx:id="colonneNom" minWidth="8.0" prefWidth="129.0" text="Nom" />
+                        <TableColumn fx:id="colonneVille" prefWidth="108.0" text="Ville" />
+                    </columns>
+                  </TableView>
+               </children>
+            </VBox>
+            <VBox spacing="70.0">
+               <children>
+                  <VBox spacing="10.0">
+                     <children>
+                        <Label text="Prénom" />
+                        <TextField fx:id="textPrenom" />
+                        <Label text="Nom" />
+                        <TextField fx:id="textNom" />
+                        <Label text="Ville" />
+                        <TextField fx:id="textVille" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                  </VBox>
+                  <VBox spacing="10.0">
+                     <children>
+                        <HBox spacing="15.0">
+                           <children>
+                              <Button mnemonicParsing="false" text="Sauver" />
+                              <Button mnemonicParsing="false" text="Annuler" />
+                           </children>
+                        </HBox>
+                        <Button mnemonicParsing="false" text="Supprimer">
+                           <VBox.margin>
+                              <Insets left="20.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

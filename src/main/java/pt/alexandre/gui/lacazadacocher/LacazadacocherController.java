@@ -49,8 +49,14 @@ public class LacazadacocherController
                 r.setSelected(false);
             }
             choix.setDisable(true);
+            checkTxt.setSelected(false);
+            checkFond.setSelected(false);
+            checkCasse.setSelected(false);
             labelAff.setStyle("");
             labelAff.setText("");
+            casse.setDisable(true);
+            texte.setDisable(true);
+            fond.setDisable(true);
         } else
         {
             choix.setDisable(false);
@@ -114,6 +120,4 @@ public class LacazadacocherController
         }
         labelAff.setStyle(style);
     }
-
-
 }
