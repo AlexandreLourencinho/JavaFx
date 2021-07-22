@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="manab ">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/manab .jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

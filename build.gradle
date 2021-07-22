@@ -14,6 +14,9 @@ repositories {
     mavenCentral()
 }
 
+
+
+
 javafx {
     version = "16"
     modules = ["javafx.controls","javafx.fxml"]
@@ -22,10 +25,17 @@ javafx {
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'org.apache.commons:commons-lang3:3.12.0'
+}
+
+run {
+    standardInput = System.in
 }
 
 test {
     useJUnitPlatform()
 }
+
 
 mainClassName = "pt.alexandre.App"

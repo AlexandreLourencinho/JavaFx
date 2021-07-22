@@ -28,5 +28,7 @@
       </VBox>
       <Button fx:id="sliders" layoutX="63.0" layoutY="230.0" mnemonicParsing="false" onAction="#fenSliders" text="Sliders les mondes parallèles" />
       <Button fx:id="sliders2" layoutX="63.0" layoutY="283.0" mnemonicParsing="false" onAction="#fenSlidersDeux" text="Sliders les mondes parallèles2" />
+      <Button fx:id="tabCli" layoutX="402.0" layoutY="141.0" mnemonicParsing="false" onAction="#fenClient" text="tableau clients" />
+      <Button fx:id="btnTranscodeur" layoutX="402.0" layoutY="199.0" mnemonicParsing="false" onAction="#fenTranscodeur" text="Le TRANSCODEUR" />
    </children>
 </AnchorPane>

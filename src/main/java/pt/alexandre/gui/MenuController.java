@@ -58,4 +58,24 @@ public class MenuController
         stagefen.show();
     }
 
+    public void fenClient() throws IOException
+    {
+        stagefen = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("tableauClient/tableauClient.fxml"));
+        Scene scene = new Scene(root);
+        stagefen.setTitle("Creation de taleau client");
+        stagefen.setScene(scene);
+        stagefen.show();
+    }
+
+    public void fenTranscodeur() throws IOException
+    {
+        stagefen = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("leTranscodeur/leTranscodeur.fxml"));
+        Scene scene = new Scene(root);
+        stagefen.setTitle("EL FAMOSO TRANSCODEUR");
+        stagefen.setScene(scene);
+        stagefen.show();
+    }
+
 }

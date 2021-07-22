@@ -1,5 +1,7 @@
-pt/alexandre/gui/additionneur/AdditionneurController.java
- pt.alexandre.AdditionneurController
+pt/alexandre/gui/lacazadacocher/LacazadacocherController.java
+ pt.alexandre.gui.lacazadacocher.LacazadacocherController
+pt/alexandre/gui/tableauClient/model/Client.java
+ pt.alexandre.gui.tableauClient.model.Client
 pt/alexandre/gui/sliders2/Sliders2Controller.java
  pt.alexandre.gui.sliders2.Sliders2Controller
  pt.alexandre.gui.sliders2.Sliders2Controller$1
@@ -7,9 +9,19 @@ pt/alexandre/gui/sliders2/Sliders2Controller.java
  pt.alexandre.gui.sliders2.Sliders2Controller$3
 pt/alexandre/gui/sliders/SlidersController.java
  pt.alexandre.gui.sliders.SlidersController
+pt/alexandre/gui/additionneur/AdditionneurController.java
+ pt.alexandre.AdditionneurController
+pt/alexandre/gui/leTranscodeur/tools/Transcoder.java
+ pt.alexandre.gui.leTranscodeur.tools.Transcoder
 pt/alexandre/gui/MenuController.java
  pt.alexandre.gui.MenuController
+pt/alexandre/gui/tableauClient/TableauClientController.java
+ pt.alexandre.gui.tableauClient.TableauClientController
+pt/alexandre/gui/leTranscodeur/tools/GenClef.java
+ pt.alexandre.gui.leTranscodeur.tools.GenClef
+pt/alexandre/gui/leTranscodeur/tools/Constantes.java
+ pt.alexandre.gui.leTranscodeur.tools.Constantes
 pt/alexandre/App.java
  pt.alexandre.App
-pt/alexandre/gui/lacazadacocher/LacazadacocherController.java
- pt.alexandre.gui.lacazadacocher.LacazadacocherController
+pt/alexandre/gui/leTranscodeur/LeTranscodeurController.java
+ pt.alexandre.gui.leTranscodeur.LeTranscodeurController
