@@ -12,77 +12,89 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pt.alexandre.gui.leTranscodeur.LeTranscodeurController">
    <children>
-      <VBox layoutX="34.0" layoutY="26.0" spacing="30.0">
+      <VBox layoutX="34.0" layoutY="26.0">
          <children>
-            <Label text="-&gt;LE&lt;- TRANSCODEUR" textFill="#b96c01">
-               <font>
-                  <Font size="24.0" />
-               </font>
-               <VBox.margin>
-                  <Insets left="130.0" />
-               </VBox.margin>
-            </Label>
-            <VBox spacing="35.0">
+            <VBox>
                <children>
-                  <HBox spacing="25.0">
+                  <VBox spacing="30.0">
                      <children>
-                        <VBox spacing="48.0">
-                           <HBox.margin>
-                              <Insets top="30.0" />
-                           </HBox.margin>
-                        </VBox>
-                        <HBox spacing="35.0">
+                        <Label text="-&gt;LE&lt;- TRANSCODEUR" textFill="#b96c01">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="130.0" />
+                           </VBox.margin>
+                        </Label>
+                        <VBox spacing="35.0">
                            <children>
-                              <VBox spacing="15.0">
+                              <HBox spacing="25.0">
                                  <children>
-                                    <Label text="Message en clair">
-                                       <padding>
-                                          <Insets left="100.0" />
-                                       </padding>
-                                    </Label>
-                                    <TextField fx:id="txtClair" prefHeight="25.0" prefWidth="276.0" />
-                                    <Label text="Clef de codage">
-                                       <padding>
-                                          <Insets left="100.0" />
-                                       </padding>
-                                    </Label>
-                                    <TextField fx:id="txtClef" prefHeight="25.0" prefWidth="276.0" />
-                                    <Label text="Message codé">
-                                       <padding>
-                                          <Insets left="100.0" />
-                                       </padding>
-                                    </Label>
-                                    <TextField fx:id="txtCode" prefHeight="25.0" prefWidth="276.0" />
+                                    <VBox spacing="48.0">
+                                       <HBox.margin>
+                                          <Insets top="30.0" />
+                                       </HBox.margin>
+                                    </VBox>
+                                    <HBox spacing="35.0">
+                                       <children>
+                                          <VBox spacing="15.0">
+                                             <children>
+                                                <Label text="Message en clair">
+                                                   <padding>
+                                                      <Insets left="100.0" />
+                                                   </padding>
+                                                </Label>
+                                                <TextField fx:id="txtClair" prefHeight="25.0" prefWidth="276.0" />
+                                                <Label text="Clef de codage">
+                                                   <padding>
+                                                      <Insets left="100.0" />
+                                                   </padding>
+                                                </Label>
+                                                <TextField fx:id="txtClef" prefHeight="25.0" prefWidth="276.0" />
+                                                <Label text="Message codé">
+                                                   <padding>
+                                                      <Insets left="100.0" />
+                                                   </padding>
+                                                </Label>
+                                                <TextField fx:id="txtCode" prefHeight="25.0" prefWidth="276.0" />
+                                             </children>
+                                          </VBox>
+                                          <VBox spacing="47.0">
+                                             <children>
+                                                <Button fx:id="btnEncode" mnemonicParsing="false" onAction="#encoderMessage" text="Encoder votre message">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </Button>
+                                                <Button fx:id="genClef" mnemonicParsing="false" onAction="#genererClef" text="Générer une clef de codage" />
+                                                <Button fx:id="btnDecode" mnemonicParsing="false" onAction="#decoderMessage" text="Decoder votre message" />
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets top="31.0" />
+                                             </HBox.margin>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
                                  </children>
-                              </VBox>
-                              <VBox spacing="47.0">
-                                 <children>
-                                    <Button fx:id="btnEncode" mnemonicParsing="false" onAction="#encoderMessage" text="Encoder votre message">
-                                       <VBox.margin>
-                                          <Insets />
-                                       </VBox.margin>
-                                    </Button>
-                                    <Button fx:id="genClef" mnemonicParsing="false" onAction="#genererClef" text="Générer une clef de codage" />
-                                    <Button fx:id="btnDecode" mnemonicParsing="false" onAction="#decoderMessage" text="Decoder votre message" />
-                                 </children>
-                                 <HBox.margin>
-                                    <Insets top="31.0" />
-                                 </HBox.margin>
-                              </VBox>
+                              </HBox>
+                              <Button mnemonicParsing="false" onAction="#viderChamps" text="vider les champs">
+                                 <VBox.margin>
+                                    <Insets left="190.0" />
+                                 </VBox.margin>
+                              </Button>
                            </children>
-                        </HBox>
+                        </VBox>
                      </children>
-                  </HBox>
-                  <Button mnemonicParsing="false" onAction="#viderChamps" text="vider les champs">
+                  </VBox>
+                  <Button mnemonicParsing="false" onAction="#sauverClef" text="Enregistrer la clef">
                      <VBox.margin>
-                        <Insets left="190.0" />
+                        <Insets left="400.0" />
                      </VBox.margin>
                   </Button>
                </children>
             </VBox>
+            <Label fx:id="labelClefSauvee" prefHeight="17.0" prefWidth="364.0" />
          </children>
       </VBox>
-      <Button layoutX="468.0" layoutY="327.0" mnemonicParsing="false" onAction="#sauverClef" text="Enregistrer la clef" />
-      <Label fx:id="labelClefSauvee" layoutX="468.0" layoutY="360.0" />
    </children>
 </AnchorPane>
