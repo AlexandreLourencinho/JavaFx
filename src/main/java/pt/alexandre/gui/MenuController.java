@@ -88,4 +88,13 @@ public class MenuController
         stagefen.show();
     }
 
+    public void fenPapyrus2() throws IOException {
+        stagefen = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("exoPapyrusJDBC/listeCmd.fxml"));
+        Scene scene = new Scene(root);
+        stagefen.setTitle("EL FAMOSO TRANSCODEUR");
+        stagefen.setScene(scene);
+        stagefen.show();
+    }
+
 }

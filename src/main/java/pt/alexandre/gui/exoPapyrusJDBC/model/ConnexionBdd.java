@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 public class ConnexionBdd
 {
-    private String url = "jdbc:mysql://localhost:3308/record";
+    private String url = "jdbc:mysql://localhost:3306/record";
     Connection con = null;
 
     public Connection connec()
@@ -24,7 +24,7 @@ public class ConnexionBdd
             System.out.println(throwables.getErrorCode());
             System.out.println(throwables.getSQLState());
             Alert alert =  new Alert(Alert.AlertType.WARNING);
-            alert.setContentText("Il y a eu une erreur de connexion !!!" + throwables.getMessage());
+            alert.setContentText("Il y a eu une erreur de connexion !" + throwables.getMessage());
             alert.showAndWait();
         }
         return con;

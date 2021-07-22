@@ -45,7 +45,7 @@ public class PapyrusController
             }
             if (!resOk) {
                 Alert alert =  new Alert(Alert.AlertType.INFORMATION);
-                alert.setContentText("aucun résultats");
+                alert.setContentText("aucun résultat.");
                 alert.showAndWait();
             }
             req.detruitTout();
