@@ -5,12 +5,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import pt.alexandre.gui.exoPapyrusJDBC.model.Fournisseur;
 import pt.alexandre.gui.exoPapyrusJDBC.model.FournisseurDAO;
-import pt.alexandre.gui.exoPapyrusJDBC.model.RequetePrepares;
-
-import java.sql.ResultSet;
 import java.sql.SQLException;
-
-import static java.util.Objects.isNull;
 
 public class PapyrusController
 {
@@ -29,10 +24,6 @@ public class PapyrusController
 
     private int code;
 
-    private boolean resOk = false;
-
-    private Fournisseur fournisseur;
-
 
     public void recupInfo() throws SQLException
     {
@@ -40,7 +31,7 @@ public class PapyrusController
         {
             FournisseurDAO fournisseurDAO = new FournisseurDAO();
             code = Integer.parseInt(codeFou.getText());
-            fournisseur = fournisseurDAO.trouverFournisseur(code);
+            Fournisseur fournisseur = fournisseurDAO.trouverFournisseur(code);
 
 
             System.out.println(fournisseur.toString());
@@ -51,7 +42,7 @@ public class PapyrusController
                 addrFou.setText(fournisseur.getRuefou());
                 contactFou.setText(fournisseur.getConfou());
             }else{
-                                Alert alert =  new Alert(Alert.AlertType.INFORMATION);
+                Alert alert =  new Alert(Alert.AlertType.INFORMATION);
                 alert.setContentText("aucun fournisseur à ce numéro.");
                 alert.setTitle("Aucun résultat");
                 alert.showAndWait();
@@ -62,10 +53,5 @@ public class PapyrusController
             alert.setTitle("erreur de donnée d'entrée");
             alert.showAndWait();
         }
-
     }
-
-
-
-
 }

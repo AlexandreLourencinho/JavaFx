@@ -8,8 +8,8 @@ pt/alexandre/gui/exoPapyrusJDBC/model/ConnexionBdd.java
  pt.alexandre.gui.exoPapyrusJDBC.model.ConnexionBdd
 pt/alexandre/gui/exoPapyrusJDBC/model/FournisseurDAO.java
  pt.alexandre.gui.exoPapyrusJDBC.model.FournisseurDAO
-pt/alexandre/gui/exoPapyrusJDBC/PapyrusController.java
- pt.alexandre.gui.exoPapyrusJDBC.PapyrusController
+pt/alexandre/App.java
+ pt.alexandre.App
 pt/alexandre/gui/tableauClient/TableauClientController.java
  pt.alexandre.gui.tableauClient.TableauClientController
 pt/alexandre/gui/leTranscodeur/tools/Transcoder.java
@@ -35,9 +35,9 @@ pt/alexandre/gui/sliders/SlidersController.java
  pt.alexandre.gui.sliders.SlidersController
 pt/alexandre/gui/additionneur/AdditionneurController.java
  pt.alexandre.gui.additionneur.AdditionneurController
-pt/alexandre/gui/Menu2Controller.java
- pt.alexandre.gui.Menu2Controller
-pt/alexandre/App.java
- pt.alexandre.App
 pt/alexandre/gui/MenuController.java
  pt.alexandre.gui.MenuController
+pt/alexandre/gui/Menu2Controller.java
+ pt.alexandre.gui.Menu2Controller
+pt/alexandre/gui/exoPapyrusJDBC/PapyrusController.java
+ pt.alexandre.gui.exoPapyrusJDBC.PapyrusController
