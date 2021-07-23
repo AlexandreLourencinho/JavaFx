@@ -50,8 +50,8 @@ public class ListeCmdController
     {
         try {
             String str="";
-            RequetePrepares req = new RequetePrepares();
-            ResultSet resultat = req.comFournisseur(listeFou.getValue());
+            FournisseurDAO fournisseurDAO = new FournisseurDAO();
+            ResultSet resultat = fournisseurDAO.comFournisseur(listeFou.getValue());
             while (resultat.next()) {
                 str = str + resultat.getInt("numcom") +" " +resultat.getString("datcom")  +" "+resultat.getString("obscom") +"\n";
             }

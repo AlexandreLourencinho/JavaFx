@@ -119,6 +119,23 @@ public class FournisseurDAO extends ConnexionBdd
         }
     }
 
+    public ResultSet comFournisseur(String nomfou)
+    {
+        try
+        {
+            stmt = connec().prepareStatement(
+                    "SELECT * FROM papyrus.entcom INNER JOIN papyrus.fournis ON entcom.numfou = fournis.numfou WHERE nomfou=?");
+            stmt.setString(1, nomfou);
+            return stmt.executeQuery();
+        }
+        catch (SQLException exception)
+        {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.showAndWait();
+        }
+        return null;
+    }
+
 
     public boolean fournisseurValide(Fournisseur founis)
     {
