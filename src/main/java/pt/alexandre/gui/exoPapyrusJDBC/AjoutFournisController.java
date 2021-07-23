@@ -54,7 +54,7 @@ public class AjoutFournisController {
             contact=txtContact.getText();
             plusGrandNumfou = avoirPlusGrandNumfou()+1;
             if(req.ajoutFournis(plusGrandNumfou, nom, rue, cp, ville, contact)){
-            Alert alert = new Alert(Alert.AlertType.WARNING);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setContentText("vous avez ajouté le fournisseur " + nom + " !");
             alert.showAndWait();
             }else{

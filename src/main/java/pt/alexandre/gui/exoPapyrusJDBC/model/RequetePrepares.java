@@ -106,7 +106,8 @@ public class RequetePrepares extends ConnexionBdd
             stmt.setString(4, posfou);
             stmt.setString(5, vilfou);
             stmt.setString(6, confou);
-            return stmt.execute();
+            stmt.execute();
+            return true;
         }
         catch (SQLException e)
         {
