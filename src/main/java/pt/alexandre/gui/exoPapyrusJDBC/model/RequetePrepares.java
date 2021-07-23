@@ -94,55 +94,6 @@ public class RequetePrepares extends ConnexionBdd
         return null;
     }
 
-    public boolean ajoutFournis(int numfou, String nomfou, String ruefou, String posfou, String vilfou, String confou)
-    {
-        try
-        {
-            stmt = connec().prepareStatement("INSERT INTO papyrus.fournis(numfou, nomfou, ruefou, posfou, vilfou, " +
-                    "confou) VALUES (?, ?, ?, ?, ?, ?)");
-            stmt.setInt(1, numfou);
-            stmt.setString(2, nomfou);
-            stmt.setString(3, ruefou);
-            stmt.setString(4, posfou);
-            stmt.setString(5, vilfou);
-            stmt.setString(6, confou);
-            stmt.execute();
-            return true;
-        }
-        catch (SQLException e)
-        {
-            Alert alert = new Alert(AlertType.INFORMATION);
-            alert.setContentText("erreur d'insertion");
-            alert.showAndWait();
-            return false;
-        }
-
-    }
-
-    public int grosNumfou()
-    {
-        int num=0;
-        ResultSet result;
-        try
-        {
-            stmt = connec().prepareStatement("SELECT MAX(fournis.numfou) as numfou FROM papyrus.fournis");
-            result = stmt.executeQuery();
-            while (result.next())
-            {
-                num = result.getInt("numfou");
-
-            }
-            return num;
-        }
-        catch (SQLException e)
-        {
-            Alert alert = new Alert(AlertType.WARNING);
-            alert.setContentText("problème de récupération de numéro fournisseur");
-            alert.showAndWait();
-            return 0;
-        }
-    }
-
     public void terminer()
     {
         try

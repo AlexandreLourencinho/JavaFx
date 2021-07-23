@@ -3,6 +3,8 @@ package pt.alexandre.gui.exoPapyrusJDBC;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import pt.alexandre.gui.exoPapyrusJDBC.model.Fournisseur;
+import pt.alexandre.gui.exoPapyrusJDBC.model.FournisseurDAO;
 import pt.alexandre.gui.exoPapyrusJDBC.model.RequetePrepares;
 
 import java.sql.ResultSet;
@@ -22,51 +24,34 @@ public class AjoutFournisController {
     @FXML
     private TextField txtContact;
 
-    private int plusGrandNumfou;
-
-
-    public int avoirPlusGrandNumfou()
-    {
-        RequetePrepares req = new RequetePrepares();
-        int recup=0;
-        try
-        {
-                recup = req.grosNumfou();
-            return recup;
-        }catch(Exception e){
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setContentText("problème de grosnumfou");
-            alert.showAndWait();
-            return 0;
-        }
-    }
 
     public void ajouter()
     {
-        String nom,rue,cp,ville,contact;
-        RequetePrepares req = new RequetePrepares();
+        Fournisseur fourni = new Fournisseur();
+        FournisseurDAO reqFourni = new FournisseurDAO();
         try
         {
-            nom = txtNom.getText();
-            rue = txtRue.getText();
-            cp = txtCp.getText();
-            ville = txtVille.getText();
-            contact=txtContact.getText();
-            plusGrandNumfou = avoirPlusGrandNumfou()+1;
-            if(req.ajoutFournis(plusGrandNumfou, nom, rue, cp, ville, contact)){
+            fourni.setNomfou(txtNom.getText());
+            fourni.setRuefou(txtRue.getText());
+            fourni.setPosfou(txtCp.getText());
+            fourni.setVilfou(txtVille.getText());
+            fourni.setConfou(txtContact.getText());
+            if(reqFourni.ajouterFournisseur(fourni)){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("vous avez ajouté le fournisseur " + nom + " !");
-            alert.showAndWait();
+            alert.setContentText("vous avez ajouté le fournisseur " + fourni.getNomfou() + " !");
+            alert.setTitle("Tout s'est bien passé.");
+            alert.show();
             }else{
                 Alert alert = new Alert(Alert.AlertType.WARNING);
-                alert.setContentText("vous n'avez pas ajouté le fournisseur " + nom + " !");
+                alert.setContentText("vous n'avez pas ajouté le fournisseur " + fourni.getNomfou() + " !");
+                alert.setTitle("Problème lors de l'appel de la requête");
                 alert.showAndWait();
             }
         }
         catch (Exception e)
         {
             Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setContentText("problème d'insertion");
+            alert.setContentText("problème d'insertion " + e.getMessage());
             alert.showAndWait();
         }
     }
