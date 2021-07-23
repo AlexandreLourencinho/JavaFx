@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pt.alexandre.gui.exoPapyrusJDBC.AjoutFournisController">
    <children>
       <VBox alignment="CENTER" layoutX="69.0" layoutY="50.0" spacing="15.0">
@@ -40,22 +39,22 @@
                         </VBox>
                         <VBox spacing="30.0">
                            <children>
-                              <TextField prefHeight="31.0" prefWidth="354.0" />
-                              <TextField prefHeight="31.0" prefWidth="354.0" />
+                              <TextField fx:id="txtNom" prefHeight="31.0" prefWidth="354.0" />
+                              <TextField fx:id="txtRue" prefHeight="31.0" prefWidth="354.0" />
                               <HBox spacing="15.0">
                                  <children>
-                                    <TextField prefHeight="31.0" prefWidth="132.0" />
-                                    <TextField prefHeight="31.0" prefWidth="223.0" />
+                                    <TextField fx:id="txtCp" prefHeight="31.0" prefWidth="132.0" />
+                                    <TextField fx:id="txtVille" prefHeight="31.0" prefWidth="223.0" />
                                  </children>
                               </HBox>
-                              <TextField prefHeight="31.0" prefWidth="354.0" />
+                              <TextField fx:id="txtContact" prefHeight="31.0" prefWidth="354.0" />
                            </children>
                         </VBox>
                      </children>
                   </HBox>
                   <HBox spacing="90.0">
                      <children>
-                        <Button mnemonicParsing="false" text="Ajouter">
+                        <Button mnemonicParsing="false" onAction="#ajouter" text="Ajouter">
                            <HBox.margin>
                               <Insets left="250.0" />
                            </HBox.margin>

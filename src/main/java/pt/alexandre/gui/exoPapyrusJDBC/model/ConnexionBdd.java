@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 public class ConnexionBdd
 {
-    private String url = "jdbc:mysql://localhost:3306/record";
+    private String url = "jdbc:mysql://localhost:3306/papyrus";
     Connection con = null;
 
     public Connection connec()
