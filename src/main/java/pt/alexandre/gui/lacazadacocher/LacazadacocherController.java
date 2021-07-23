@@ -9,6 +9,17 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Random;
 
+/**
+ * Bon les noms sont non contractuels, hein !
+ * Autre exercice en JavaFx, permet de voir la gestion dynamique d'un label en fonction des options cochées
+ * permet également de voir les setDisable -notamment-
+ * @see TextField
+ * @see RadioButton
+ * @see CheckBox
+ * @see TitledPane
+ * @see Label
+ * @see ToggleGroup
+ */
 public class LacazadacocherController
 {
     public TextField zonetxt;
@@ -39,6 +50,10 @@ public class LacazadacocherController
 
     }
 
+    /**
+     * gère l'activation, ou non, de toute les fonctions d'édition et des cases permettant leur activation
+     * Se déclenche au "keyrelase" dans le textfield de la fenêtre
+     */
     public void auRelachement()
     {
         if (zonetxt.getText().equals(""))
@@ -64,6 +79,9 @@ public class LacazadacocherController
         }
     }
 
+    /**
+     * méthode qui permet le changement de style (fond, couleur du texte) ainsi que de la casse du texte en label
+     */
     public void testCasse()
     {
         String style="";

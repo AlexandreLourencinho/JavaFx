@@ -1,30 +1,19 @@
-package pt.alexandre;
+package pt.alexandre.gui.additionneur;
 
-import javafx.event.ActionEvent;
 import javafx.event.Event;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 
+/**
+ * Controlleur de l'additionneur réalisé lors des débuts des exercices sur le JavaFx
+ * projet : améliorer pour en faire une vrai calculatrice
+ * @author Alexandre Lourencinho
+ */
 public class AdditionneurController
 {
 
-    public Button boutonun;
-
-    public Button boutondeux;
-    public Button boutontrois;
-    public Button boutonquatre;
-    public Button boutoncinq;
-    public Button boutonsix;
-    public Button boutonsept;
-    public Button boutonhuit;
-    public Button boutonneuf;
-    public Button boutonzero;
     public Button boutonresult;
     public Button boutonVider;
     public Stage stagefen;
@@ -33,11 +22,21 @@ public class AdditionneurController
 
     private int result = 0;
 
+
+    /**
+     * Fonction d'initialisation qui ne sert qu'a mettre la zone de texte en non éditable.
+     * Utilisée ici simplement pour se familiariser avec la fonction initialize()
+     */
     public void initialize()
     {
         zonecalc.setEditable(false);
     }
 
+    /**
+     *
+     * @param event réagit ici a l'évenement clic sur les chiffres de l'additionneur
+     * @see Event
+     */
     public void affich(Event event)
     {
         String value = ((Button) event.getSource()).getText();
@@ -87,6 +86,10 @@ public class AdditionneurController
 
     }
 
+    /**
+     * Cette méthode sert uniquement à afficher le calcul dans l'additionneur
+     * @param nb Le nombre a afficher
+     */
     public void settest(int nb)
     {
         if(zonecalc.getText().equals("")){
@@ -97,11 +100,17 @@ public class AdditionneurController
         }
     }
 
+    /**
+     * Cette méthode sert a afficher le résultat du calcul
+     */
     public void setresult()
     {
         zonecalc.setText(zonecalc.getText()+ "\n________\n" + result);
     }
 
+    /**
+     * Vide la zone de texte dans l'additionneur
+     */
     public void effacerFenetre()
     {
         zonecalc.setText("");

@@ -1,5 +1,9 @@
 package pt.alexandre.gui.exoPapyrusJDBC.model;
 
+/**
+ * Classe fournisseur permettant d'instancier des objets fournisseurs et de les manipuler.
+ * @author Lourencinho Alexandre
+ */
 public class Fournisseur {
 
     private int numfou;

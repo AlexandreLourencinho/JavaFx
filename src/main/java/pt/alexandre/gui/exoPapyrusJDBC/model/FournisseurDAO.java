@@ -7,6 +7,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+/**
+ * Cette classe fournit les différentes fonctions
+ * JDBC nécessaires a la gestion de la  table fournisseur
+ * @author Alexandre
+ */
 public class FournisseurDAO extends ConnexionBdd
 {
     private PreparedStatement stmt;
@@ -14,6 +19,10 @@ public class FournisseurDAO extends ConnexionBdd
     private ArrayList<Fournisseur> listeFourni = new ArrayList<>();
     private ResultSet resultat;
 
+    /**
+     * @param fourni une instance de la classe {@link Fournisseur}
+     * @return un booléen indiquant si l'insertion s'est correctement déroulée ou non
+     */
     public boolean ajouterFournisseur(Fournisseur fourni)
     {
         try {
