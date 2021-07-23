@@ -44,37 +44,37 @@ public class RequetePrepares extends ConnexionBdd
 
     }
 
-    public ResultSet listeFournis(int numfou)
-    {
-        try
-        {
-            stmt = connec().prepareStatement("SELECT * FROM papyrus.fournis, papyrus.entcom WHERE numfou=?");
-            stmt.setInt(1, numfou);
-            return stmt.executeQuery();
-        }
-        catch (SQLException throwables)
-        {
-            Alert alert = new Alert(AlertType.WARNING);
-            alert.showAndWait();
-        }
-        return null;
-    }
+//    public ResultSet listeFournis(int numfou)
+//    {
+//        try
+//        {
+//            stmt = connec().prepareStatement("SELECT * FROM papyrus.fournis, papyrus.entcom WHERE numfou=?");
+//            stmt.setInt(1, numfou);
+//            return stmt.executeQuery();
+//        }
+//        catch (SQLException throwables)
+//        {
+//            Alert alert = new Alert(AlertType.WARNING);
+//            alert.showAndWait();
+//        }
+//        return null;
+//    }
 
 
-    public ResultSet listeFournisseur()
-    {
-        try
-        {
-            stmt = connec().prepareStatement("SELECT fournis.nomfou FROM papyrus.fournis");
-            return stmt.executeQuery();
-        }
-        catch (SQLException throwables)
-        {
-            Alert alert = new Alert(AlertType.WARNING);
-            alert.showAndWait();
-        }
-        return null;
-    }
+//    public ResultSet listeFournisseur()
+//    {
+//        try
+//        {
+//            stmt = connec().prepareStatement("SELECT fournis.nomfou FROM papyrus.fournis");
+//            return stmt.executeQuery();
+//        }
+//        catch (SQLException throwables)
+//        {
+//            Alert alert = new Alert(AlertType.WARNING);
+//            alert.showAndWait();
+//        }
+//        return null;
+//    }
 
 
     public ResultSet comFournisseur(String nomfou)
@@ -94,17 +94,17 @@ public class RequetePrepares extends ConnexionBdd
         return null;
     }
 
-    public void terminer()
-    {
-        try
-        {
-            connec().close();
-
-        }
-        catch (SQLException e)
-        {
-            e.printStackTrace();
-        }
-
-    }
+//    public void terminer()
+//    {
+//        try
+//        {
+//            connec().close();
+//
+//        }
+//        catch (SQLException e)
+//        {
+//            e.printStackTrace();
+//        }
+//
+//    }
 }

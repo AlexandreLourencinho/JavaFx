@@ -11,7 +11,7 @@ public class FournisseurDAO extends ConnexionBdd
 {
     private PreparedStatement stmt;
     private ResultSet res;
-    private ArrayList<Fournisseur> listeFourni;
+    private ArrayList<Fournisseur> listeFourni = new ArrayList<>();
     private ResultSet resultat;
 
     public boolean ajouterFournisseur(Fournisseur fourni)
@@ -19,7 +19,7 @@ public class FournisseurDAO extends ConnexionBdd
         try {
             stmt = connec().prepareStatement("INSERT INTO papyrus.fournis(numfou, nomfou, ruefou, posfou, vilfou, confou" +
                     ") VALUES (?,?,?,?,?,?)");
-            stmt.setInt(1,dernierNumfou());
+            stmt.setInt(1,fourni.getNumfou());
             stmt.setString(2,fourni.getNomfou());
             stmt.setString(3, fourni.getRuefou());
             stmt.setString(4, fourni.getPosfou());
@@ -59,6 +59,10 @@ public class FournisseurDAO extends ConnexionBdd
                 fourni.setPosfou(res.getString("posfou"));
                 fourni.setConfou(res.getString("confou"));
             }
+            System.out.println(fourni.getNomfou());
+            connec().close();
+            stmt.close();
+            res.close();
             return fourni;
         }
         catch (SQLException throwables)
@@ -69,7 +73,6 @@ public class FournisseurDAO extends ConnexionBdd
             alert.showAndWait();
             return null;
         }
-
     }
 
     public ArrayList<Fournisseur> listeFournisseurs()
@@ -80,12 +83,7 @@ public class FournisseurDAO extends ConnexionBdd
             res = stmt.executeQuery();
             while(res.next()){
                 Fournisseur fourni = new Fournisseur();
-                fourni.setNumfou(res.getInt("numfou"));
                 fourni.setNomfou(res.getString("nomfou"));
-                fourni.setVilfou(res.getString("vilfou"));
-                fourni.setRuefou(res.getString("ruefou"));
-                fourni.setPosfou(res.getString("posfou"));
-                fourni.setConfou(res.getString("confou"));
                 listeFourni.add(fourni);
             }
             return listeFourni;
@@ -109,7 +107,6 @@ public class FournisseurDAO extends ConnexionBdd
             while (res.next())
             {
                 num = res.getInt("numfou");
-
             }
             return num+1;
         }
@@ -119,6 +116,16 @@ public class FournisseurDAO extends ConnexionBdd
             alert.setContentText("problème de récupération de numéro fournisseur");
             alert.showAndWait();
             return 0;
+        }
+    }
+
+
+    public boolean fournisseurValide(Fournisseur founis)
+    {
+        if(founis.getNomfou()==null && founis.getRuefou()==null && founis.getConfou()==null && founis.getVilfou()==null){
+            return false;
+        }else{
+            return true;
         }
     }
 

@@ -31,6 +31,7 @@ public class AjoutFournisController {
         FournisseurDAO reqFourni = new FournisseurDAO();
         try
         {
+            fourni.setNumfou(reqFourni.dernierNumfou());
             fourni.setNomfou(txtNom.getText());
             fourni.setRuefou(txtRue.getText());
             fourni.setPosfou(txtCp.getText());
