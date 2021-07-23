@@ -33,4 +33,11 @@ public class App extends Application
 
 
     }
+
+    public static void changeFxml(String fxml) throws IOException {
+        Parent root = FXMLLoader.load(App.class.getResource("gui/" + fxml));
+        scene.setRoot(root);
+        stage.hide();
+        stage.show();
+    }
 }

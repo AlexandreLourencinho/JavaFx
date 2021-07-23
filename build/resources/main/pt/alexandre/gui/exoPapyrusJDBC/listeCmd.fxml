@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="501.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pt.alexandre.gui.exoPapyrusJDBC.ListeCmdController">
+   <children>
+      <ComboBox fx:id="listeFou" layoutX="130.0" layoutY="74.0" onAction="#comFourni" onContextMenuRequested="#comFourni" prefHeight="25.0" prefWidth="242.0" />
+      <TextArea fx:id="zoneTexte" layoutX="74.0" layoutY="125.0" prefHeight="200.0" prefWidth="353.0" />
+   </children>
+</AnchorPane>

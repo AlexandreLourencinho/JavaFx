@@ -4,8 +4,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import pt.alexandre.App;
 
 import java.io.IOException;
 
@@ -13,13 +15,13 @@ public class MenuController
 {
     public Button boutonAdd;
     public Button boutonCaza;
-    public Stage stagefen;
+    public Stage stagefen = new Stage();
     public Button sliders;
     public Button sliders2;
 
     public void fenAdd(ActionEvent actionEvent) throws IOException
     {
-        stagefen = new Stage();
+//        stagefen = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("additionneur/additionneur.fxml"));
         Scene scene = new Scene(root);
         stagefen.setTitle("additionneur");
@@ -29,7 +31,7 @@ public class MenuController
 
     public void fenCaza() throws IOException
     {
-        stagefen = new Stage();
+//        stagefen = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("lacazadacocher/lacazadacocher.fxml"));
         Scene scene = new Scene(root);
         stagefen.setTitle("la case à cocher");
@@ -40,7 +42,7 @@ public class MenuController
 
     public void fenSliders() throws IOException
     {
-        stagefen = new Stage();
+//        stagefen = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("sliders/sliders.fxml"));
         Scene scene = new Scene(root);
         stagefen.setTitle("SLIDERS LES MONDES PARALLELES OMG");
@@ -50,7 +52,7 @@ public class MenuController
 
     public void fenSlidersDeux() throws IOException
     {
-        stagefen = new Stage();
+//        stagefen = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("sliders2/sliders2.fxml"));
         Scene scene = new Scene(root);
         stagefen.setTitle("SLIDERS LES MONDES PARALLELES OMG2");
@@ -60,7 +62,7 @@ public class MenuController
 
     public void fenClient() throws IOException
     {
-        stagefen = new Stage();
+//        stagefen = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("tableauClient/tableauClient.fxml"));
         Scene scene = new Scene(root);
         stagefen.setTitle("Creation de taleau client");
@@ -70,7 +72,7 @@ public class MenuController
 
     public void fenTranscodeur() throws IOException
     {
-        stagefen = new Stage();
+//        stagefen = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("leTranscodeur/leTranscodeur.fxml"));
         Scene scene = new Scene(root);
         stagefen.setTitle("EL FAMOSO TRANSCODEUR");
@@ -80,7 +82,7 @@ public class MenuController
 
     public void fenPapyrus() throws IOException
     {
-        stagefen = new Stage();
+//        stagefen = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("exoPapyrusJDBC/papyrus.fxml"));
         Scene scene = new Scene(root);
         stagefen.setTitle("EL FAMOSO TRANSCODEUR");
@@ -89,12 +91,24 @@ public class MenuController
     }
 
     public void fenPapyrus2() throws IOException {
-        stagefen = new Stage();
+//        stagefen = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("exoPapyrusJDBC/listeCmd.fxml"));
         Scene scene = new Scene(root);
         stagefen.setTitle("EL FAMOSO TRANSCODEUR");
         stagefen.setScene(scene);
         stagefen.show();
+    }
+
+
+    public void pageSuivante()
+    {
+        try {
+            App.changeFxml("menu2.fxml");
+        } catch (IOException e) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setContentText("une erreur est survenue au changement de page.");
+            alert.showAndWait();
+        }
     }
 
 }
