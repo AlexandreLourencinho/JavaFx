@@ -1,10 +1,8 @@
 package pt.alexandre.gui.leTranscodeur;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.layout.HBox;
 import org.germain.tool.ManaBox;
 import pt.alexandre.gui.leTranscodeur.tools.GenClef;
 import pt.alexandre.gui.leTranscodeur.tools.Transcoder;
@@ -33,12 +31,26 @@ public class LeTranscodeurController
 {
 
     public Label labelClefSauvee;
+    public ToggleButton boutonVerrouillage;
+    public HBox testonssa;
     @FXML
     private TextField txtClair;
     @FXML
     private TextField txtClef;
     @FXML
     private TextField txtCode;
+
+    Transcoder trans;
+
+    public void initialize()
+    {
+            txtClair.textProperty().addListener(evt -> encoderMessage());
+
+            txtCode.textProperty().addListener(evt-> decoderMessage());
+
+            txtClef.textProperty().addListener(evt ->{trans = new Transcoder(txtClef.getText());champsEditable();});
+
+    }
 
     /**
      * méthode permettant l'appel de la génération de clef (via la classe éponyme)
@@ -54,9 +66,12 @@ public class LeTranscodeurController
      */
     public void encoderMessage()
     {
-        Transcoder trans = new Transcoder(txtClef.getText());
-        System.out.println(txtClef.getText());
-        txtCode.setText(trans.encode(txtClair.getText()));
+//        trans = new Transcoder(txtClef.getText());
+        if(txtClair.isFocused()){
+            System.out.println(txtClef.getText());
+            txtCode.setText(trans.encode(txtClair.getText()));
+        }
+
     }
 
     /**
@@ -64,8 +79,20 @@ public class LeTranscodeurController
      */
     public void decoderMessage()
     {
-        Transcoder trans = new Transcoder(txtClef.getText());
-        txtClair.setText(trans.decode(txtCode.getText()));
+        if(txtCode.isFocused()){
+            txtClair.setText(trans.decode(txtCode.getText()));
+        }
+    }
+
+    public void champsEditable()
+    {
+        if(!txtClef.getText().equals("")){
+            txtCode.setDisable(false);
+            txtClair.setDisable(false);
+        }else{
+            txtClair.setDisable(true);
+            txtCode.setDisable(true);
+        }
     }
 
     /**
@@ -76,6 +103,22 @@ public class LeTranscodeurController
         txtCode.clear();
         txtClef.clear();
         txtClair.clear();
+    }
+
+    public void protegerClef()
+    {
+        if(boutonVerrouillage.isSelected())
+        {
+            txtClef.setDisable(true);
+            boutonVerrouillage.setStyle("-fx-background-color: limegreen; -fx-text-fill: black");
+            testonssa.setSpacing(12);
+            boutonVerrouillage.setText("Déverrouiller");
+        }else{
+            txtClef.setDisable(false);
+            boutonVerrouillage.setStyle("-fx-background-color: darkred; -fx-text-fill: cyan");
+            testonssa.setSpacing(25);
+            boutonVerrouillage.setText("Verrouiller");
+        }
     }
 
     /**
