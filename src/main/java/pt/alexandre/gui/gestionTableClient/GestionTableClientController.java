@@ -9,6 +9,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import pt.alexandre.gui.gestionTableClient.model.Clients;
 
+/**
+ * @author Alexandre Lourencinho
+ */
 public class GestionTableClientController {
 
     @FXML
