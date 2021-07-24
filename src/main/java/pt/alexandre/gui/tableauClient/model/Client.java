@@ -1,5 +1,10 @@
 package pt.alexandre.gui.tableauClient.model;
 
+/**
+ * Classe permettant la construction et l'instanciation d'objets "clients"
+ * @see pt.alexandre.gui.tableauClient.TableauClientController
+ * @author Alexandre Lourencinho
+ */
 public class Client
 {
     private String nom,prenom,ville;
@@ -8,16 +13,15 @@ public class Client
 
     /**
      * Constructeur avec paramètres
-     * @param nom : nom du client
-     * @param prenom :prénom du client
-     * @param ville :ville du client
+     * @param nom chaîne de caractère :  nom du client
+     * @param prenom chaîne de caractère : prénom du client
+     * @param ville chaîne de caractère : ville du client
      */
     public Client(String nom, String prenom, String ville) {
         this.prenom = prenom;
         this.nom = nom;
         this.ville = ville;
     }
-
 
 
     public String getNom()
