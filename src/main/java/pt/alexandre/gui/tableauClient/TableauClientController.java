@@ -69,7 +69,7 @@ public class TableauClientController
     {
         model.add(new Client(textNom.getText(),textPrenom.getText(),textVille.getText()));
         tableauCli.setItems(model);
-        tableauCli.setItems(model);
+//        tableauCli.setItems(model);
         textNom.clear();
         textPrenom.clear();
         textVille.clear();
