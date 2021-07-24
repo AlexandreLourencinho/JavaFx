@@ -49,7 +49,6 @@ public class LeTranscodeurController
             txtCode.textProperty().addListener(evt-> decoderMessage());
 
             txtClef.textProperty().addListener(evt ->{trans = new Transcoder(txtClef.getText());champsEditable();});
-
     }
 
     /**
