@@ -18,6 +18,14 @@ public class Fournisseur {
 
     }
 
+    /**
+     * constructeur de la classe fournisseur
+     * @param nom le nom du fournisseur
+     * @param rue l'adresse du fournisseur
+     * @param pos le code postal du fournisseur
+     * @param ville la ville du fournisseur
+     * @param contact ...bonne question, dans la base, on dirait des pseudos...
+     */
     public Fournisseur(String nom, String rue, String pos, String ville, String contact)
     {
         this.nomfou = nom;

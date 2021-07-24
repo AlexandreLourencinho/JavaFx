@@ -8,49 +8,24 @@ import java.util.List;
 
 import static pt.alexandre.gui.leTranscodeur.tools.Constantes.ALPHABET;
 
+/**
+ * classe contenant le nécessaire pour générer une clef de chiffrage pour encoder/décoder les messages via
+ * le transcodeur
+ * @see Transcoder
+ * @see pt.alexandre.gui.leTranscodeur.LeTranscodeurController
+ * @see Constantes
+ * @see Collections
+ * @author Alexandre Lourencinho
+ */
 public class GenClef
 {
-    private String prenom;
-    private String generatedKey;
-    private String generatedCryptedKey = null;
 
-    public String getGeneratedCryptedKey()
-    {
-        return generatedCryptedKey;
-    }
-
-    public String getPrenom()
-    {
-        return prenom;
-    }
-
-    public String getGeneratedKey()
-    {
-        return generatedKey;
-    }
-
-    public GenClef(String prenom, String generatedCryptedKey)
-    {
-        this.prenom = prenom;
-        this.generatedCryptedKey = generatedCryptedKey;
-        this.generatedKey = ManaBox.decrypt(this.generatedCryptedKey);
-    }
-
-    public GenClef(String prenom)
-    {
-        this.prenom = prenom;
-        this.generatedKey = randomKey();
-        this.generatedCryptedKey = ManaBox.encrypt(this.generatedKey);
-    }
-
-    public GenClef()
-    {
-
-    }
-
+    /**
+     * méthode permettant de générer une clef de chiffrage aléatoire basée sur la constante ALPHABET
+     * @return Une chaine de caractère contenant ceux de la constante ALPHABET qui servira de clef
+     */
     public String randomKey()
     {
-
         List<Character> charList = Arrays.asList(ALPHABET);
 
         Collections.shuffle(charList);
@@ -60,12 +35,7 @@ public class GenClef
         {
             chaineCode.append(car);
         }
-
         return String.valueOf(chaineCode);
     }
 
-    public void writeKey()
-    {
-
-    }
 }

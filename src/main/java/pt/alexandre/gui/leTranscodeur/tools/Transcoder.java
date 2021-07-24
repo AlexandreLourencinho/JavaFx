@@ -5,6 +5,15 @@ import org.germain.tool.ManaBox;
 
 import java.util.HashMap;
 
+/**
+ * Classe permettant de créer les tableaux de codage et décodage et contenant les méthodes de codage et de décodage
+ * @see ManaBox
+ * @see pt.alexandre.gui.leTranscodeur.LeTranscodeurController
+ * @see GenClef
+ * @see Constantes
+ * @see HashMap
+ * @author Alexandre Lourencinho
+ */
 public class Transcoder
 {
     // tableau permettant le décodage
@@ -13,7 +22,10 @@ public class Transcoder
     private HashMap<Character, String> tableauEncode = new HashMap<>();
 
 
-    // constructeur du transcodeur prenant en paramètre la clef cryptée
+    /**
+     * constructeur du transcodeur prenant en paramètre la clef cryptée
+     * @param clef la clef, cryptée via l'outil Manabox fournit par notre formateur Germain Sipierre
+     */
     public Transcoder(String clef)
     {
         // initialisation des variables, ici tempchar sera uniquement une variable tampon
@@ -59,7 +71,11 @@ public class Transcoder
         return tableauEncode;
     }
 
-    // fonction encodage avec en paramètre la phrase a coder
+    /**
+     * fonction encodage avec en paramètre la phrase a coder
+     * @param phrase La chaîne de caractère à encoder
+     * @return une chaîne de caractère codée (ressemblant à : ABEDCECAAZ)
+     */
     public String encode(String phrase)
     {
         // déclaration de la string qui sera retournée
@@ -73,7 +89,11 @@ public class Transcoder
         return encoded;
     }
 
-    // fonction décodage avec en paramètre la chaine de caractères codés
+    /**
+     * fonction décodage avec en paramètre la chaine de caractères codés
+     * @param phrase la chaîne de caractère à décoder
+     * @return une chaîne de caractère lisible, en clair (non codée)
+     */
     public String decode(String phrase)
     {
         // déclaration du string qui sera retourné

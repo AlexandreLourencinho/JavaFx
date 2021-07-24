@@ -3,7 +3,6 @@ package pt.alexandre.gui.additionneur;
 import javafx.event.Event;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
-import javafx.stage.Stage;
 
 
 /**
@@ -14,9 +13,9 @@ import javafx.stage.Stage;
 public class AdditionneurController
 {
 
+
     public Button boutonresult;
     public Button boutonVider;
-    public Stage stagefen;
 
     public TextArea zonecalc;
 
@@ -83,7 +82,6 @@ public class AdditionneurController
                 result+=9;
                 break;
         }
-
     }
 
     /**

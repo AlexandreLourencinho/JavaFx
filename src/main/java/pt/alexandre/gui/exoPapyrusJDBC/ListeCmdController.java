@@ -1,22 +1,31 @@
 package pt.alexandre.gui.exoPapyrusJDBC;
 
-import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
-import javafx.stage.Stage;
 import pt.alexandre.gui.exoPapyrusJDBC.model.Fournisseur;
 import pt.alexandre.gui.exoPapyrusJDBC.model.FournisseurDAO;
-import pt.alexandre.gui.exoPapyrusJDBC.model.RequetePrepares;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-
+/**
+ * Classe permettant la gestion de l'affichage de la liste des commandes par fournisseur. Cadre : exercices JDBC sur
+ * la base papyrus
+ * @see Fournisseur
+ * @see FournisseurDAO
+ * @see FournisseurDAO#listeFournisseurs()
+ * @see FournisseurDAO#comFournisseur(String)
+ * @see ObservableList
+ * @see ComboBox
+ * @see javafx.scene.control.TextArea
+ * @see ResultSet
+ * @author Alexandre Lourencinho
+ */
 public class ListeCmdController
 {
 
@@ -28,7 +37,9 @@ public class ListeCmdController
     private ArrayList<Fournisseur> listeFourn;
 
 
-
+    /**
+     * méthode permettant de générer et afficher dans une liste déroulante la liste des fournisseurs
+     */
     public void initialize()
     {
         try {
@@ -46,6 +57,10 @@ public class ListeCmdController
         }
     }
 
+    /**
+     * méthode appelant celle récupérant les informations de commandes d'un fournisseur et l'affichant dans la zone de
+     * texte prévue à cet effet
+     */
     public void comFourni()
     {
         try {

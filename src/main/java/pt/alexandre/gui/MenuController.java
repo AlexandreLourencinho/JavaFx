@@ -17,6 +17,8 @@ import java.util.Objects;
  * @see FXMLLoader
  * @see Scene
  * @see Parent
+ * @see Alert
+ * @author Alexandre Lourencinho
  */
 public class MenuController
 {
@@ -199,7 +201,7 @@ public class MenuController
     {
         try {
             App.changeFxml("menu2.fxml");
-        } catch (IOException e) {
+        } catch (Exception e) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setContentText("une erreur est survenue au changement de page.");
             alert.showAndWait();

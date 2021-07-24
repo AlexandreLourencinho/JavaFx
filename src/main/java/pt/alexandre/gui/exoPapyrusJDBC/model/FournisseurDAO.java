@@ -10,6 +10,10 @@ import java.util.ArrayList;
 /**
  * Cette classe fournit les différentes fonctions
  * JDBC nécessaires a la gestion de la  table fournisseur
+ * crud sur la  table fournisseur
+ * @see Fournisseur
+ * @see ResultSet
+ * @see PreparedStatement
  * @author Alexandre
  */
 public class FournisseurDAO extends ConnexionBdd
@@ -17,7 +21,6 @@ public class FournisseurDAO extends ConnexionBdd
     private PreparedStatement stmt;
     private ResultSet res;
     private ArrayList<Fournisseur> listeFourni = new ArrayList<>();
-    private ResultSet resultat;
 
     /**
      * @param fourni une instance de la classe {@link Fournisseur}
@@ -148,11 +151,7 @@ public class FournisseurDAO extends ConnexionBdd
 
     public boolean fournisseurValide(Fournisseur founis)
     {
-        if(founis.getNomfou()==null && founis.getRuefou()==null && founis.getConfou()==null && founis.getVilfou()==null){
-            return false;
-        }else{
-            return true;
-        }
+        return founis.getNomfou() != null || founis.getRuefou() != null || founis.getConfou() != null || founis.getVilfou() != null;
     }
 
 }

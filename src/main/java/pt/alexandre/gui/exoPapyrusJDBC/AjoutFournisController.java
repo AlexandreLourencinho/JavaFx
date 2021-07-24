@@ -5,11 +5,16 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import pt.alexandre.gui.exoPapyrusJDBC.model.Fournisseur;
 import pt.alexandre.gui.exoPapyrusJDBC.model.FournisseurDAO;
-import pt.alexandre.gui.exoPapyrusJDBC.model.RequetePrepares;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
+/**
+ * Classe permettant la gestion des scripts d'ajout de fournisseur dans la base de donnée via un formulaire
+ * @see TextField
+ * @see Fournisseur
+ * @see FournisseurDAO
+ * @see FournisseurDAO#dernierNumfou()
+ * @see FournisseurDAO#ajouterFournisseur(Fournisseur)
+ * @author Alexandre
+ */
 public class AjoutFournisController {
 
 
@@ -24,7 +29,9 @@ public class AjoutFournisController {
     @FXML
     private TextField txtContact;
 
-
+    /**
+     * méthode permettant l'appel et l'execution de la requête d'ajout de fournisseur, renvoi une alerte en cas de problème
+     */
     public void ajouter()
     {
         Fournisseur fourni = new Fournisseur();

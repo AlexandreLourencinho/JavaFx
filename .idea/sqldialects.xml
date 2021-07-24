@@ -3,6 +3,5 @@
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/script_papyrus_complet.sql" dialect="MariaDB" />
     <file url="file://$PROJECT_DIR$/src/main/java/pt/alexandre/gui/exoPapyrusJDBC/model/FournisseurDAO.java" dialect="GenericSQL" />
-    <file url="file://$PROJECT_DIR$/src/main/java/pt/alexandre/gui/exoPapyrusJDBC/model/RequetePrepares.java" dialect="GenericSQL" />
   </component>
 </project>
