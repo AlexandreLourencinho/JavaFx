@@ -59,8 +59,7 @@ public class GestionTableClientController {
     public void listeDesClients()
     {
         ClientsDAO reqCli = new ClientsDAO();
-        ArrayList<Clients> tousClients = new ArrayList<>();
-        tousClients.addAll(reqCli.listeClients());
+        ArrayList<Clients> tousClients = new ArrayList<>(reqCli.listeClients());
         model.addAll(tousClients);
         tableauClient.setItems(model);
     }
