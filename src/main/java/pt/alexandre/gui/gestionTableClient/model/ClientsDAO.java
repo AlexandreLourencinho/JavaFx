@@ -124,8 +124,12 @@ public class ClientsDAO extends ConnexionBaseHotel
     public boolean supprimerClient(int id)
     {
         try {
-            stmt = connex().prepareStatement("DELETE FROM hotel.client WHERE cli_id=?");
+            stmt = connex().prepareStatement("DELETE FROM hotel.reservation WHERE res_cli_id=?;");
             stmt.setInt(1, id);
+            stmt.execute();
+            stmt.close();
+            stmt = connex().prepareStatement("DELETE FROM hotel.client WHERE cli_id=?");
+            stmt.setInt(1,id);
             stmt.execute();
             return true;
         } catch (SQLException throwables) {
