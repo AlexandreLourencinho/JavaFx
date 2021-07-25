@@ -55,7 +55,8 @@ public class ClientsDAO extends ConnexionBaseHotel
     public ArrayList<Clients> listeClients()
     {
         try {
-            stmt = connex().prepareStatement("SELECT * FROM hotel.client");
+            listeDesClients= new ArrayList<>();
+            stmt = connex().prepareStatement("SELECT cli_id,cli_nom,cli_prenom,cli_ville FROM hotel.client");
             resultat = stmt.executeQuery();
             while (resultat.next()) {
                 cli = new Clients(resultat.getInt("cli_id"), resultat.getString("cli_nom"), resultat.getString("cli_prenom"), resultat.getString("cli_ville"));

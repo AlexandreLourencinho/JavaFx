@@ -57,6 +57,22 @@ public class Menu2Controller {
         }
     }
 
+    public void fenGestionTableClient()
+    {
+        try{
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("gestionTableClient/gestionTableClient.fxml")));
+            Scene scene = new Scene(root);
+            stagefen.setTitle("Gestion de la table client");
+            stagefen.setScene(scene);
+            stagefen.show();
+        }catch(Exception e){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Erreur FXML-FGTC");
+            alert.setContentText("Erreur lors du chargement du sous-programme");
+            alert.showAndWait();
+        }
+    }
+
 
 
 

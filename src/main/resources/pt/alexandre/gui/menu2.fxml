@@ -13,5 +13,6 @@
             <Font size="18.0" />
          </font>
       </Hyperlink>
+      <Button layoutX="65.0" layoutY="132.0" mnemonicParsing="false" onAction="#fenGestionTableClient" text="Gestion table client" />
    </children>
 </AnchorPane>

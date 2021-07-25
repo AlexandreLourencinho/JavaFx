@@ -7,7 +7,13 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import pt.alexandre.gui.gestionTableClient.model.Clients;
+import pt.alexandre.gui.gestionTableClient.model.ClientsDAO;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * @author Alexandre Lourencinho
@@ -21,11 +27,12 @@ public class GestionTableClientController {
     @FXML
     public TextField txtVille;
     @FXML
-    public TableView tableauClient;
+    public TableView<Clients> tableauClient;
     @FXML
-    public TableColumn colonneNom;
+    public TableColumn<Clients,String> colonneNom;
     @FXML
-    public TableColumn colonnePrenom;
+    public TableColumn<Clients,String> colonnePrenom;
+    public Pane paneDetails;
 
 
     ObservableList<Clients> model = FXCollections.observableArrayList();
@@ -33,9 +40,29 @@ public class GestionTableClientController {
 
     public void initialize()
     {
-        tableauClient.setEditable(false);
         colonneNom.setCellValueFactory(new PropertyValueFactory<>("nom"));
         colonnePrenom.setCellValueFactory(new PropertyValueFactory<>("prenom"));
+        masquerPaneDetails();
+        listeDesClients();
+    }
+
+    public void afficherPaneDetails()
+    {
+        paneDetails.setVisible(true);
+    }
+
+    public void masquerPaneDetails()
+    {
+        paneDetails.setVisible(false);
+    }
+
+    public void listeDesClients()
+    {
+        ClientsDAO reqCli = new ClientsDAO();
+        ArrayList<Clients> tousClients = new ArrayList<>();
+        tousClients.addAll(reqCli.listeClients());
+        model.addAll(tousClients);
+        tableauClient.setItems(model);
     }
 
 }
