@@ -13,8 +13,8 @@ pt/alexandre/gui/sliders2/Sliders2Controller.java
  pt.alexandre.gui.sliders2.Sliders2Controller$3
 pt/alexandre/gui/sliders/SlidersController.java
  pt.alexandre.gui.sliders.SlidersController
-pt/alexandre/gui/Menu2Controller.java
- pt.alexandre.gui.Menu2Controller
+pt/alexandre/gui/gestionTableClient/model/ConnexionBaseHotel.java
+ pt.alexandre.gui.gestionTableClient.model.ConnexionBaseHotel
 pt/alexandre/gui/leTranscodeur/tools/Constantes.java
  pt.alexandre.gui.leTranscodeur.tools.Constantes
 pt/alexandre/gui/additionneur/AdditionneurController.java
@@ -27,23 +27,23 @@ pt/alexandre/gui/leTranscodeur/tools/GenClef.java
  pt.alexandre.gui.leTranscodeur.tools.GenClef
 pt/alexandre/gui/exoPapyrusJDBC/model/Fournisseur.java
  pt.alexandre.gui.exoPapyrusJDBC.model.Fournisseur
-pt/alexandre/gui/exoPapyrusJDBC/ListeCmdController.java
- pt.alexandre.gui.exoPapyrusJDBC.ListeCmdController
-pt/alexandre/gui/gestionTableClient/GestionTableClientController.java
- pt.alexandre.gui.gestionTableClient.GestionTableClientController
-pt/alexandre/gui/gestionTableClient/model/Clients.java
- pt.alexandre.gui.gestionTableClient.model.Clients
-pt/alexandre/gui/exoPapyrusJDBC/PapyrusController.java
- pt.alexandre.gui.exoPapyrusJDBC.PapyrusController
 pt/alexandre/gui/tableauClient/TableauClientController.java
  pt.alexandre.gui.tableauClient.TableauClientController
-pt/alexandre/gui/gestionTableClient/model/ClientsDAO.java
- pt.alexandre.gui.gestionTableClient.model.ClientsDAO
-pt/alexandre/gui/gestionTableClient/model/ConnexionBaseHotel.java
- pt.alexandre.gui.gestionTableClient.model.ConnexionBaseHotel
-pt/alexandre/gui/exoPapyrusJDBC/model/FournisseurDAO.java
- pt.alexandre.gui.exoPapyrusJDBC.model.FournisseurDAO
 pt/alexandre/gui/leTranscodeur/LeTranscodeurController.java
  pt.alexandre.gui.leTranscodeur.LeTranscodeurController
+pt/alexandre/gui/exoPapyrusJDBC/ListeCmdController.java
+ pt.alexandre.gui.exoPapyrusJDBC.ListeCmdController
 pt/alexandre/gui/exoPapyrusJDBC/AjoutFournisController.java
  pt.alexandre.gui.exoPapyrusJDBC.AjoutFournisController
+pt/alexandre/gui/gestionTableClient/model/Clients.java
+ pt.alexandre.gui.gestionTableClient.model.Clients
+pt/alexandre/gui/Menu2Controller.java
+ pt.alexandre.gui.Menu2Controller
+pt/alexandre/gui/exoPapyrusJDBC/PapyrusController.java
+ pt.alexandre.gui.exoPapyrusJDBC.PapyrusController
+pt/alexandre/gui/exoPapyrusJDBC/model/FournisseurDAO.java
+ pt.alexandre.gui.exoPapyrusJDBC.model.FournisseurDAO
+pt/alexandre/gui/gestionTableClient/model/ClientsDAO.java
+ pt.alexandre.gui.gestionTableClient.model.ClientsDAO
+pt/alexandre/gui/gestionTableClient/GestionTableClientController.java
+ pt.alexandre.gui.gestionTableClient.GestionTableClientController

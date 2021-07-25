@@ -65,4 +65,6 @@ public class GestionTableClientController {
         tableauClient.setItems(model);
     }
 
+
+
 }
