@@ -11,7 +11,7 @@ import java.util.ArrayList;
 /**
  * @author Alexandre Lourencinho
  */
-public class ClientsDAO extends ConnexionBaseHotel
+public class ClientsDAO extends ConnexionBaseHotel implements DaoInterface<Clients>
 {
 
     PreparedStatement stmt;
@@ -24,7 +24,8 @@ public class ClientsDAO extends ConnexionBaseHotel
      * @param id numéro id du client
      * @return une instance de la classe client
      */
-    public Clients trouverClient(int id)
+    @Override
+    public Clients trouverUn(int id)
     {
         try {
             stmt = connex().prepareStatement("SELECT * FROM hotel.client WHERE cli_id=?");
@@ -52,7 +53,8 @@ public class ClientsDAO extends ConnexionBaseHotel
     /**
      * @return un arraylist d'instances de la classe Clients
      */
-    public ArrayList<Clients> listeClients()
+    @Override
+    public ArrayList<Clients> liste()
     {
         try {
             listeDesClients= new ArrayList<>();
@@ -76,7 +78,8 @@ public class ClientsDAO extends ConnexionBaseHotel
      * @param cli une instance de la classe Clients
      * @return un booléen
      */
-    public boolean ajouterClient(Clients cli)
+    @Override
+    public boolean ajouter(Clients cli)
     {
         try {
             stmt = connex().prepareStatement("INSERT INTO hotel.client(cli_nom,cli_prenom,cli_ville)" +
@@ -99,13 +102,16 @@ public class ClientsDAO extends ConnexionBaseHotel
      * @param cli une instance de la classe Clients
      * @return un booléen
      */
-    public boolean modifierClient(Clients cli)
+    @Override
+    public boolean modifier(Clients cli)
     {
         try {
-            stmt = connex().prepareStatement("UPDATE hotel.client SET cli_nom=?,cli_prenom=?,cli_ville=?");
+            stmt = connex().prepareStatement("UPDATE hotel.client SET cli_nom=?,cli_prenom=?,cli_ville=? WHERE " +
+                    "cli_id=?");
             stmt.setString(1, cli.getNom());
             stmt.setString(2, cli.getPrenom());
             stmt.setString(3, cli.getVille());
+            stmt.setInt(4,cli.getId());
             stmt.execute();
             return true;
         } catch (SQLException throwables) {
@@ -121,9 +127,11 @@ public class ClientsDAO extends ConnexionBaseHotel
      * @param id le numéro d'ID d'un client
      * @return un booléen
      */
-    public boolean supprimerClient(int id)
+    @Override
+    public boolean supprimer(int id)
     {
         try {
+            System.out.println(id);
             stmt = connex().prepareStatement("DELETE FROM hotel.reservation WHERE res_cli_id=?;");
             stmt.setInt(1, id);
             stmt.execute();
@@ -140,4 +148,5 @@ public class ClientsDAO extends ConnexionBaseHotel
             return false;
         }
     }
+
 }

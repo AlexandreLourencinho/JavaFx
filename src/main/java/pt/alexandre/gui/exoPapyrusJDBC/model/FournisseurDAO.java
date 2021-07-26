@@ -31,6 +31,7 @@ public class FournisseurDAO extends ConnexionBdd
         try {
             stmt = connec().prepareStatement("INSERT INTO papyrus.fournis(numfou, nomfou, ruefou, posfou, vilfou, confou" +
                     ") VALUES (?,?,?,?,?,?)");
+            System.out.println(fourni.getNumfou());
             stmt.setInt(1,fourni.getNumfou());
             stmt.setString(2,fourni.getNomfou());
             stmt.setString(3, fourni.getRuefou());
@@ -42,9 +43,9 @@ public class FournisseurDAO extends ConnexionBdd
             con.close();
             return true;
         } catch (Exception e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("erreur DAO-A");
-            alert.setContentText("Erreur à l'insertion");
+//            Alert alert = new Alert(Alert.AlertType.ERROR);
+//            alert.setTitle("erreur DAO-A");
+//            alert.setContentText("Erreur à l'insertion");
             return false;
         }
     }
@@ -152,6 +153,21 @@ public class FournisseurDAO extends ConnexionBdd
     public boolean fournisseurValide(Fournisseur founis)
     {
         return founis.getNomfou() != null || founis.getRuefou() != null || founis.getConfou() != null || founis.getVilfou() != null;
+    }
+
+    public boolean supprimerFournisseur(int id)
+    {
+        try
+        {
+            stmt = connec().prepareStatement("DELETE FROM papyrus.fournis WHERE numfou=?");
+            stmt.setInt(1,id);
+            stmt.execute();
+            return true;
+        }
+        catch (SQLException e)
+        {
+            return false;
+        }
     }
 
 }

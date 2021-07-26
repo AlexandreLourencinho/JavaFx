@@ -24,7 +24,7 @@
             </TableView>
             <VBox spacing="60.0">
                <children>
-                  <Button fx:id="boutonAjouter" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#afficherPaneDetails" text="Ajouter" textAlignment="CENTER">
+                  <Button fx:id="boutonAjouter" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#ajouterClient" text="Ajouter" textAlignment="CENTER">
                      <VBox.margin>
                         <Insets left="7.0" />
                      </VBox.margin>
@@ -40,7 +40,7 @@
                   <Insets top="60.0" />
                </HBox.margin>
             </VBox>
-            <Pane fx:id="paneDetails" prefHeight="311.0" prefWidth="234.0" style="-fx-background-color: white;">
+            <Pane fx:id="paneDetails" prefHeight="311.0" prefWidth="234.0" style="-fx-background-color: white;" visible="false">
                <children>
                   <VBox layoutX="11.0" layoutY="14.0" spacing="20.0">
                      <children>
@@ -87,8 +87,8 @@
                               </VBox>
                               <HBox spacing="100.0">
                                  <children>
-                                    <Button fx:id="boutonOk" mnemonicParsing="false" text="OK" />
-                                    <Button fx:id="boutonAnnuler" mnemonicParsing="false" text="Annuler" />
+                                    <Button fx:id="boutonOk" mnemonicParsing="false" onAction="#verif" text="OK" />
+                                    <Button fx:id="boutonAnnuler" mnemonicParsing="false" onAction="#annulerTout" text="Annuler" />
                                  </children>
                                  <VBox.margin>
                                     <Insets left="10.0" />

@@ -26,8 +26,9 @@ public class Fournisseur {
      * @param ville la ville du fournisseur
      * @param contact ...bonne question, dans la base, on dirait des pseudos...
      */
-    public Fournisseur(String nom, String rue, String pos, String ville, String contact)
+    public Fournisseur(int numfou,String nom, String rue, String pos, String ville, String contact)
     {
+        this.numfou = numfou;
         this.nomfou = nom;
         this.ruefou = rue;
         this.posfou = pos;
