@@ -33,8 +33,8 @@ pt/alexandre/gui/lacazadacocher/LacazadacocherController.java
  pt.alexandre.gui.lacazadacocher.LacazadacocherController
 pt/alexandre/tests/TestsGeneraux.java
  pt.alexandre.tests.TestsGeneraux
-pt/alexandre/gui/gestionTableClient/model/Clients.java
- pt.alexandre.gui.gestionTableClient.model.Clients
+pt/alexandre/gui/exoPapyrusJDBC/model/FournisseurDAO.java
+ pt.alexandre.gui.exoPapyrusJDBC.model.FournisseurDAO
 pt/alexandre/gui/leTranscodeur/tools/Constantes.java
  pt.alexandre.gui.leTranscodeur.tools.Constantes
 pt/alexandre/gui/exoPapyrusJDBC/model/Fournisseur.java
@@ -43,12 +43,12 @@ pt/alexandre/gui/exoPapyrusJDBC/ListeCmdController.java
  pt.alexandre.gui.exoPapyrusJDBC.ListeCmdController
 pt/alexandre/gui/exoPapyrusJDBC/PapyrusController.java
  pt.alexandre.gui.exoPapyrusJDBC.PapyrusController
-pt/alexandre/gui/exoPapyrusJDBC/model/FournisseurDAO.java
- pt.alexandre.gui.exoPapyrusJDBC.model.FournisseurDAO
 pt/alexandre/gui/gestionTableClient/GestionTableClientController.java
  pt.alexandre.gui.gestionTableClient.GestionTableClientController
 pt/alexandre/gui/gestionTableClient/model/DaoInterface.java
  pt.alexandre.gui.gestionTableClient.model.DaoInterface
+pt/alexandre/gui/gestionTableClient/model/Clients.java
+ pt.alexandre.gui.gestionTableClient.model.Clients
 pt/alexandre/gui/gestionTableClient/tools/CheckForm.java
  pt.alexandre.gui.gestionTableClient.tools.CheckForm
 pt/alexandre/gui/gestionTableClient/model/ClientsDAO.java
