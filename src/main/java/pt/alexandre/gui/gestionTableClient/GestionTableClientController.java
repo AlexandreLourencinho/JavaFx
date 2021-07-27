@@ -46,7 +46,7 @@ public class GestionTableClientController
     private Clients tempCli;
 
 
-    ObservableList<Clients> model = FXCollections.observableArrayList();
+   private ObservableList<Clients> model = FXCollections.observableArrayList();
 
 
     public void initialize()
