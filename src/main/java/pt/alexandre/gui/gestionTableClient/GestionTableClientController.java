@@ -14,8 +14,14 @@ import pt.alexandre.gui.gestionTableClient.model.ClientsDAO;
 import pt.alexandre.gui.gestionTableClient.tools.CheckForm;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
+ * classe permettant la gestion de la page gestion des clients de la base hotel
+ * @see Clients
+ * @see ClientsDAO
+ * @see CheckForm
+ * @see pt.alexandre.gui.gestionTableClient.model.ConnexionBaseHotel
  * @author Alexandre Lourencinho
  */
 public class GestionTableClientController
@@ -60,6 +66,9 @@ public class GestionTableClientController
         paneDetails.setVisible(false);
     }
 
+    /**
+     * méthode mettant à jour la liste des clients dans le tableview
+     */
     public void listeDesClients()
     {
         ClientsDAO reqCli = new ClientsDAO();
@@ -69,6 +78,9 @@ public class GestionTableClientController
         tableauClient.setItems(model);
     }
 
+    /**
+     * méthode permettant simplement d'afficher les détails (éditables) d'un client
+     */
     public void modifierClient()
     {
         afficherPaneDetails();
@@ -78,6 +90,9 @@ public class GestionTableClientController
         txtVille.setText(tempCli.getVille());
     }
 
+    /**
+     * méthode appelant la suppression de client si celui ci existe
+     */
     public void supprimerUnClient()
     {
         ClientsDAO reqCli = new ClientsDAO();
@@ -95,6 +110,9 @@ public class GestionTableClientController
         }
     }
 
+    /**
+     * méthode permettant d'appeler les méthodes de modification ou d'ajout selon si le client existe déjà ou non
+     */
     public void miseAJourClient()
     {
         ClientsDAO reqCli = new ClientsDAO();
@@ -138,6 +156,9 @@ public class GestionTableClientController
         }
     }
 
+    /**
+     * méthode gérant l'affichage du pane
+     */
     public void ajouterClient()
     {
         tableauClient.getSelectionModel().clearSelection();
@@ -149,6 +170,10 @@ public class GestionTableClientController
         afficherPaneDetails();
     }
 
+    /**
+     * méthode permettant simplement de purger l'objet client temporaire, de vider les champs et de fermer le pane
+     * détails
+     */
     public void annulerTout()
     {
         tableauClient.getSelectionModel().clearSelection();
@@ -159,17 +184,29 @@ public class GestionTableClientController
         masquerPaneDetails();
     }
 
+    /**
+     * méthode appelant la vérification de formulaire, et renvoi vers la gestion d'ajout / de modification si le
+     * formulaire est correctement rempli
+     */
     public void verif()
     {
-        if(check.checkFormClients(txtNom.getText(),txtPrenom.getText(),txtVille.getText())){
-            miseAJourClient();
-        }else{
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Erreur dans le formulaire");
-            alert.setContentText("Ne rentrez que des caractères alphanumériques, commencez par une majuscule (les - " +
-                    "sont autorisés pour la ville )");
-            alert.showAndWait();
-        }
-    }
+        HashMap<String, Boolean> result = check.checkFormClients(txtNom.getText(), txtPrenom.getText(),
+                txtVille.getText(),txtNom,txtPrenom,txtVille);
+        for(String i : result.keySet()){
+            System.out.println( i + " - " +  result.get(i));
+            if(!result.get(i)){
 
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Erreur dans le formulaire");
+                alert.setContentText(i);
+                alert.showAndWait();
+            }else{
+                miseAJourClient();
+            }
+        }
+
+
+    }
 }
+
+

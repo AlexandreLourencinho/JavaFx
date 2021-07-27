@@ -1,6 +1,9 @@
 package pt.alexandre.gui.gestionTableClient.model;
 
 /**
+ * Classe permetttant l'instanciation d'objets "Clients"
+ * @see ClientsDAO
+ * @see pt.alexandre.gui.gestionTableClient.GestionTableClientController
  * @author Alexandre Lourencinho
  */
 public class Clients {

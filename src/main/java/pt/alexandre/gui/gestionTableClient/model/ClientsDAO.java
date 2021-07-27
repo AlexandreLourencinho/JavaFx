@@ -9,6 +9,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
+ *  Classe DAO rassemblant les méthodes agissant sur la base hotel
+ * @see Clients
+ * @see pt.alexandre.gui.gestionTableClient.GestionTableClientController
+ * @see DaoInterface
  * @author Alexandre Lourencinho
  */
 public class ClientsDAO extends ConnexionBaseHotel implements DaoInterface<Clients>
@@ -21,6 +25,7 @@ public class ClientsDAO extends ConnexionBaseHotel implements DaoInterface<Clien
 
 
     /**
+     * méthode permettant de trouver un client de la base hotel
      * @param id numéro id du client
      * @return une instance de la classe client
      */
@@ -51,6 +56,7 @@ public class ClientsDAO extends ConnexionBaseHotel implements DaoInterface<Clien
     }
 
     /**
+     * méthode permettant de lister tous les clients de la base hotel
      * @return un arraylist d'instances de la classe Clients
      */
     @Override
@@ -75,6 +81,7 @@ public class ClientsDAO extends ConnexionBaseHotel implements DaoInterface<Clien
     }
 
     /**
+     * méthode permettant d'ajouter un client dans la base hotel
      * @param cli une instance de la classe Clients
      * @return un booléen
      */
@@ -99,6 +106,7 @@ public class ClientsDAO extends ConnexionBaseHotel implements DaoInterface<Clien
     }
 
     /**
+     * méthode permettant de modifier un client de la base hotel
      * @param cli une instance de la classe Clients
      * @return un booléen
      */
@@ -124,6 +132,7 @@ public class ClientsDAO extends ConnexionBaseHotel implements DaoInterface<Clien
     }
 
     /**
+     * méthode permettant de supprimer un client de la base hotel (nécessite de supprimer aussi ses réservations)
      * @param id le numéro d'ID d'un client
      * @return un booléen
      */
@@ -148,5 +157,4 @@ public class ClientsDAO extends ConnexionBaseHotel implements DaoInterface<Clien
             return false;
         }
     }
-
 }
