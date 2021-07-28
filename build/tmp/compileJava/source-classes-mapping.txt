@@ -1,11 +1,9 @@
 pt/alexandre/gui/leTranscodeur/tools/GenClef.java
  pt.alexandre.gui.leTranscodeur.tools.GenClef
-pt/alexandre/gui/leTranscodeur/tools/Transcoder.java
- pt.alexandre.gui.leTranscodeur.tools.Transcoder
-pt/alexandre/gui/leTranscodeur/LeTranscodeurController.java
- pt.alexandre.gui.leTranscodeur.LeTranscodeurController
-pt/alexandre/gui/tableauClient/model/Client.java
- pt.alexandre.gui.tableauClient.model.Client
+pt/alexandre/gui/gestionTableClient/model/Clients.java
+ pt.alexandre.gui.gestionTableClient.model.Clients
+pt/alexandre/gui/gestionTableClient/model/ConnexionBaseHotel.java
+ pt.alexandre.gui.gestionTableClient.model.ConnexionBaseHotel
 pt/alexandre/gui/sliders2/Sliders2Controller.java
  pt.alexandre.gui.sliders2.Sliders2Controller
  pt.alexandre.gui.sliders2.Sliders2Controller$1
@@ -15,41 +13,47 @@ pt/alexandre/gui/sliders/SlidersController.java
  pt.alexandre.gui.sliders.SlidersController
 pt/alexandre/gui/Menu2Controller.java
  pt.alexandre.gui.Menu2Controller
-pt/alexandre/gui/gestionTableClient/model/ConnexionBaseHotel.java
- pt.alexandre.gui.gestionTableClient.model.ConnexionBaseHotel
+pt/alexandre/gui/exoPapyrusJDBC/PapyrusController.java
+ pt.alexandre.gui.exoPapyrusJDBC.PapyrusController
 pt/alexandre/gui/additionneur/AdditionneurController.java
  pt.alexandre.gui.additionneur.AdditionneurController
-pt/alexandre/App.java
- pt.alexandre.App
-pt/alexandre/gui/exoPapyrusJDBC/AjoutFournisController.java
- pt.alexandre.gui.exoPapyrusJDBC.AjoutFournisController
+pt/alexandre/gui/gestionTableClient/tools/CheckForm.java
+ pt.alexandre.gui.gestionTableClient.tools.CheckForm
 pt/alexandre/gui/MenuController.java
  pt.alexandre.gui.MenuController
 pt/alexandre/gui/exoPapyrusJDBC/model/ConnexionBdd.java
  pt.alexandre.gui.exoPapyrusJDBC.model.ConnexionBdd
-pt/alexandre/gui/tableauClient/TableauClientController.java
- pt.alexandre.gui.tableauClient.TableauClientController
-pt/alexandre/gui/lacazadacocher/LacazadacocherController.java
- pt.alexandre.gui.lacazadacocher.LacazadacocherController
-pt/alexandre/tests/TestsGeneraux.java
- pt.alexandre.tests.TestsGeneraux
-pt/alexandre/gui/exoPapyrusJDBC/model/FournisseurDAO.java
- pt.alexandre.gui.exoPapyrusJDBC.model.FournisseurDAO
-pt/alexandre/gui/leTranscodeur/tools/Constantes.java
- pt.alexandre.gui.leTranscodeur.tools.Constantes
-pt/alexandre/gui/exoPapyrusJDBC/model/Fournisseur.java
- pt.alexandre.gui.exoPapyrusJDBC.model.Fournisseur
-pt/alexandre/gui/exoPapyrusJDBC/ListeCmdController.java
- pt.alexandre.gui.exoPapyrusJDBC.ListeCmdController
-pt/alexandre/gui/exoPapyrusJDBC/PapyrusController.java
- pt.alexandre.gui.exoPapyrusJDBC.PapyrusController
 pt/alexandre/gui/gestionTableClient/GestionTableClientController.java
  pt.alexandre.gui.gestionTableClient.GestionTableClientController
+pt/alexandre/gui/leTranscodeur/tools/Constantes.java
+ pt.alexandre.gui.leTranscodeur.tools.Constantes
+pt/alexandre/gui/tableauClient/TableauClientController.java
+ pt.alexandre.gui.tableauClient.TableauClientController
+pt/alexandre/gui/leTranscodeur/tools/Transcoder.java
+ pt.alexandre.gui.leTranscodeur.tools.Transcoder
+pt/alexandre/gui/exoPapyrusJDBC/ListeCmdController.java
+ pt.alexandre.gui.exoPapyrusJDBC.ListeCmdController
+pt/alexandre/gui/leTranscodeur/LeTranscodeurController.java
+ pt.alexandre.gui.leTranscodeur.LeTranscodeurController
+pt/alexandre/gui/exoPapyrusJDBC/model/Fournisseur.java
+ pt.alexandre.gui.exoPapyrusJDBC.model.Fournisseur
 pt/alexandre/gui/gestionTableClient/model/DaoInterface.java
  pt.alexandre.gui.gestionTableClient.model.DaoInterface
-pt/alexandre/gui/gestionTableClient/model/Clients.java
- pt.alexandre.gui.gestionTableClient.model.Clients
-pt/alexandre/gui/gestionTableClient/tools/CheckForm.java
- pt.alexandre.gui.gestionTableClient.tools.CheckForm
+pt/alexandre/gui/tableauClient/model/Client.java
+ pt.alexandre.gui.tableauClient.model.Client
+pt/alexandre/App.java
+ pt.alexandre.App
 pt/alexandre/gui/gestionTableClient/model/ClientsDAO.java
  pt.alexandre.gui.gestionTableClient.model.ClientsDAO
+pt/alexandre/gui/exoPapyrusJDBC/AjoutFournisController.java
+ pt.alexandre.gui.exoPapyrusJDBC.AjoutFournisController
+pt/alexandre/gui/lacazadacocher/LacazadacocherController.java
+ pt.alexandre.gui.lacazadacocher.LacazadacocherController
+pt/alexandre/gui/exoPapyrusJDBC/model/Commandes.java
+ pt.alexandre.gui.exoPapyrusJDBC.model.Commandes
+pt/alexandre/gui/exoPapyrusJDBC/model/FournisseurDAO.java
+ pt.alexandre.gui.exoPapyrusJDBC.model.FournisseurDAO
+pt/alexandre/gui/exoPapyrusJDBC/model/CommandesDAO.java
+ pt.alexandre.gui.exoPapyrusJDBC.model.CommandesDAO
+pt/alexandre/tests/TestsGeneraux.java
+ pt.alexandre.tests.TestsGeneraux

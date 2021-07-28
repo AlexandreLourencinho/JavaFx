@@ -35,6 +35,16 @@ public class Fournisseur {
         this.vilfou = ville;
         this.confou = contact;
     }
+    public Fournisseur(String nom, String rue, String pos, String ville, String contact)
+    {
+        this.nomfou = nom;
+        this.ruefou = rue;
+        this.posfou = pos;
+        this.vilfou = ville;
+        this.confou = contact;
+
+    }
+
 
     public void setNumfou(int numfou) {
         this.numfou = numfou;
@@ -83,5 +93,11 @@ public class Fournisseur {
 
     public void setConfou(String confou) {
         this.confou = confou;
+    }
+
+    @Override
+    public String toString()
+    {
+        return this.nomfou;
     }
 }

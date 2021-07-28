@@ -2,6 +2,7 @@ package pt.alexandre.tests;
 
 import org.junit.Assert;
 import org.junit.Test;
+import pt.alexandre.gui.exoPapyrusJDBC.model.Commandes;
 import pt.alexandre.gui.exoPapyrusJDBC.model.ConnexionBdd;
 import pt.alexandre.gui.exoPapyrusJDBC.model.Fournisseur;
 import pt.alexandre.gui.exoPapyrusJDBC.model.FournisseurDAO;
@@ -70,12 +71,10 @@ public class TestsGeneraux
     {
         FournisseurDAO reqFou = new FournisseurDAO();
         Fournisseur fournisseur = reqFou.trouverFournisseur(120);
-        ResultSet resultat = reqFou.comFournisseur(fournisseur.getNomfou());
-        Assert.assertNotNull(resultat);
+        Commandes com = reqFou.comFournisseur(fournisseur);
+        Assert.assertNotNull(com);
         try{
-            while(resultat.next()){
-                System.out.println(resultat.getInt("numcom") +" " +resultat.getString("datcom")  +" "+resultat.getString("obscom") +"\n");
-            }
+            System.out.println(com);
         }catch(Exception e){
             System.out.println("erreur d'execution");
         }
@@ -98,9 +97,4 @@ public class TestsGeneraux
         Assert.assertTrue(reqFou.ajouterFournisseur(fournisseur));
         Assert.assertTrue(reqFou.supprimerFournisseur(24));
     }
-
-
-
-
-
 }

@@ -43,9 +43,9 @@ public class FournisseurDAO extends ConnexionBdd
             con.close();
             return true;
         } catch (Exception e) {
-//            Alert alert = new Alert(Alert.AlertType.ERROR);
-//            alert.setTitle("erreur DAO-A");
-//            alert.setContentText("Erreur à l'insertion");
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("erreur DAO-A");
+            alert.setContentText("Erreur à l'insertion");
             return false;
         }
     }
@@ -92,13 +92,20 @@ public class FournisseurDAO extends ConnexionBdd
     {
 
         try {
-            stmt = connec().prepareStatement("SELECT nomfou FROM papyrus.fournis");
+            stmt = connec().prepareStatement("SELECT * FROM papyrus.fournis");
             res = stmt.executeQuery();
+            Fournisseur tous = new Fournisseur();
+            tous.setNomfou("Tous");
+            tous.setNumfou(0000);
+            listeFourni.add(tous);
             while(res.next()){
-                Fournisseur fourni = new Fournisseur();
-                fourni.setNomfou(res.getString("nomfou"));
+                Fournisseur fourni = new Fournisseur(
+                        res.getInt("numfou"), res.getString("nomfou"),
+                        res.getString("ruefou"),res.getString("posfou"),
+                        res.getString("vilfou"),res.getString("confou"));
                 listeFourni.add(fourni);
             }
+            System.out.println(listeFourni);
             return listeFourni;
         } catch (SQLException throwables) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -132,21 +139,30 @@ public class FournisseurDAO extends ConnexionBdd
         }
     }
 
-    public ResultSet comFournisseur(String nomfou)
+    public Commandes comFournisseur(Fournisseur fournisseur)
     {
         try
         {
+            Commandes com = new Commandes();
             stmt = connec().prepareStatement(
-                    "SELECT * FROM papyrus.entcom INNER JOIN papyrus.fournis ON entcom.numfou = fournis.numfou WHERE nomfou=?");
-            stmt.setString(1, nomfou);
-            return stmt.executeQuery();
+                    "SELECT * FROM papyrus.entcom INNER JOIN papyrus.fournis ON entcom.numfou = fournis.numfou WHERE " +
+                            "entcom.numfou=?");
+            stmt.setInt(1, fournisseur.getNumfou());
+            ResultSet result = stmt.executeQuery();
+            while(result.next()){
+                com = new Commandes(result.getInt("numcom"),result.getString("obscom"),result.getString(
+                        "datcom"));
+
+            }
+            return com;
         }
         catch (SQLException exception)
         {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.showAndWait();
+            return null;
         }
-        return null;
+
     }
 
 
@@ -169,5 +185,6 @@ public class FournisseurDAO extends ConnexionBdd
             return false;
         }
     }
+
 
 }
