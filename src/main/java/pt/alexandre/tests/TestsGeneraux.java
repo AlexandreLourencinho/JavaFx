@@ -7,9 +7,9 @@ import pt.alexandre.gui.exoPapyrusJDBC.model.ConnexionBdd;
 import pt.alexandre.gui.exoPapyrusJDBC.model.Fournisseur;
 import pt.alexandre.gui.exoPapyrusJDBC.model.FournisseurDAO;
 import pt.alexandre.gui.gestionTableClient.model.ConnexionBaseHotel;
+import pt.alexandre.gui.leTranscodeur.tools.Transcoder;
 
 import java.sql.Connection;
-import java.sql.ResultSet;
 import java.util.ArrayList;
 
 public class TestsGeneraux
@@ -96,5 +96,14 @@ public class TestsGeneraux
                 "testcontact");
         Assert.assertTrue(reqFou.ajouterFournisseur(fournisseur));
         Assert.assertTrue(reqFou.supprimerFournisseur(24));
+    }
+
+
+    @Test
+    public void testTranscodeur()
+    {
+        Transcoder trans = new Transcoder("blablablablablab");
+        String test = trans.encode("OLOLOL");
+        System.out.println(test);
     }
 }

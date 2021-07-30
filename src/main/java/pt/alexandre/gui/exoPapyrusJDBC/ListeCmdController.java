@@ -48,8 +48,6 @@ public class ListeCmdController
         {
             FournisseurDAO fournisseurDAO = new FournisseurDAO();
             dbTypeList.addAll(fournisseurDAO.listeFournisseurs());
-            System.out.println(listeFou.toString());
-            System.out.println(dbTypeList.toString());
             listeFou.setPromptText("Sélectionnez un fournisseur");
             listeFou.setItems(dbTypeList);
         }
