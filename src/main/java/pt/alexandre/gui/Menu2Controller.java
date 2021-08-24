@@ -73,6 +73,22 @@ public class Menu2Controller {
         }
     }
 
+    public void fenTestApi()
+    {
+        try{
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("testapi/testapiint.fxml")));
+            Scene scene = new Scene(root);
+            stagefen.setTitle("test api sur java");
+            stagefen.setScene(scene);
+            stagefen.show();
+        }catch(Exception e){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Erreur FXML-FTA");
+            alert.setContentText("Erreur lors du chargement du sous-programme");
+            alert.showAndWait();
+        }
+
+    }
 
 
 

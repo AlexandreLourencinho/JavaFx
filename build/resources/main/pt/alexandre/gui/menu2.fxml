@@ -14,5 +14,6 @@
          </font>
       </Hyperlink>
       <Button layoutX="65.0" layoutY="132.0" mnemonicParsing="false" onAction="#fenGestionTableClient" text="Gestion table client" />
+      <Button layoutX="98.0" layoutY="200.0" mnemonicParsing="false" onAction="#fenTestApi" text="TestApi" />
    </children>
 </AnchorPane>

@@ -46,7 +46,7 @@ public class Sliders2Controller
                     @Override
                     public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue)
                     {
-                        rouge = slideRouge.getValue();
+                        rouge = (double)newValue;
                         getCouleur();
                     }
                 }
@@ -58,7 +58,7 @@ public class Sliders2Controller
                     @Override
                     public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue)
                     {
-                        vert = slideVert.getValue();
+                        vert = (double)newValue;
                         getCouleur();
                     }
                 }

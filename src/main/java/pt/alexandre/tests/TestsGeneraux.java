@@ -1,5 +1,6 @@
 package pt.alexandre.tests;
 
+import org.json.JSONObject;
 import org.junit.Assert;
 import org.junit.Test;
 import pt.alexandre.gui.exoPapyrusJDBC.model.Commandes;
@@ -105,5 +106,12 @@ public class TestsGeneraux
         Transcoder trans = new Transcoder("blablablablablab");
         String test = trans.encode("OLOLOL");
         System.out.println(test);
+    }
+
+    @Test
+    public void testJson(){
+        JSONObject jo = new JSONObject("{ \"abc\" : \"def\" }");
+        System.out.println(jo.toString());
+        String test ="";
     }
 }
