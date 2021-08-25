@@ -3,4 +3,9 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="16" />
   </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="jfxmenu.main" options="--add-exports java.base/sun.net.www.http=ALL-UNNAMED" />
+    </option>
+  </component>
 </project>

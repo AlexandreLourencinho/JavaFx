@@ -51,13 +51,15 @@ pt/alexandre/gui/exoPapyrusJDBC/AjoutFournisController.java
  pt.alexandre.gui.exoPapyrusJDBC.AjoutFournisController
 pt/alexandre/gui/lacazadacocher/LacazadacocherController.java
  pt.alexandre.gui.lacazadacocher.LacazadacocherController
+pt/alexandre/gui/testapi/model/Disque.java
+ pt.alexandre.gui.testapi.model.Disque
 pt/alexandre/gui/gestionTableClient/model/Clients.java
  pt.alexandre.gui.gestionTableClient.model.Clients
 pt/alexandre/gui/leTranscodeur/tools/Constantes.java
  pt.alexandre.gui.leTranscodeur.tools.Constantes
 pt/alexandre/gui/gestionTableClient/model/ConnexionBaseHotel.java
  pt.alexandre.gui.gestionTableClient.model.ConnexionBaseHotel
-pt/alexandre/gui/testapi/model/Disque.java
- pt.alexandre.gui.testapi.model.Disque
+pt/alexandre/gui/testapi/model/Artiste.java
+ pt.alexandre.gui.testapi.model.Artiste
 pt/alexandre/gui/testapi/TestapiintController.java
  pt.alexandre.gui.testapi.TestapiintController

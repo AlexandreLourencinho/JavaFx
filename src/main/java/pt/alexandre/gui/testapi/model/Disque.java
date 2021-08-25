@@ -1,5 +1,7 @@
 package pt.alexandre.gui.testapi.model;
 
+import org.json.JSONObject;
+
 public class Disque
 {
 
@@ -22,6 +24,21 @@ public class Disque
         this.disc_picture = disc_picture;
         this.disc_id = disc_id;
         this.artist_id = artist_id;
+    }
+
+    public Disque()
+    {
+    }
+
+    public Disque(JSONObject json){
+        this.disc_genre = json.getString("disc_genre");
+        this.disc_title = json.getString("disc_title");
+        this.disc_price = json.getFloat("disc_price");
+        this.disc_label = json.getString("disc_label");;
+        this.disc_year = json.getInt("disc_year");
+        this.disc_picture = json.getString("disc_picture");;
+        this.disc_id = json.getInt("disc_id");
+        this.artist_id = json.getInt("artist_id");
     }
 
     public String getDisc_genre()
@@ -102,5 +119,10 @@ public class Disque
     public void setArtist_id(int artist_id)
     {
         this.artist_id = artist_id;
+    }
+
+    public String toString()
+    {
+        return this.disc_title + " " + this.disc_year;
     }
 }
