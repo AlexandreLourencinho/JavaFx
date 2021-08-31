@@ -59,8 +59,8 @@ public class TestapiintController
 
     public void testApiDeux() throws IOException
     {
-        String url = "http://127.0.0.1:8005/accueil/pageAccueil/";
-        String apiKey ="?testget=vraiget";
+        String url = "http://127.0.0.1:3000/api/menu/objets/";
+        String apiKey ="";
         String urlGo = url+ apiKey;
 
 
